@@ -1,3 +1,96 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
-# Create your models here.
+from account.models import User
+
+
+class CategoryManager(models.Manager):
+    def active(self):
+        return self.filter(status=True)
+
+
+class Category(models.Model):
+    parent = models.ForeignKey('self', default=None, null=True, blank=True, on_delete=models.SET_NULL,
+                               related_name='children', verbose_name="زیردسته")
+    title = models.CharField(max_length=200, verbose_name="عنوان دسته‌بندی")
+    slug = models.SlugField(max_length=100, unique=True, verbose_name="آدرس دسته‌بندی")
+    status = models.BooleanField(default=True, verbose_name="آیا نمایش داده شود؟")
+    position = models.IntegerField(verbose_name="پوزیشن")
+
+    objects = CategoryManager()
+
+    class Meta:
+        verbose_name = "دسته‌بندی"
+        verbose_name_plural = "دسته‌بندی ها"
+        ordering = ['parent__id', 'position']
+
+    def __str__(self):
+        return self.title
+
+    # def get_absolute_url(self):
+    #     return f'/categories/{self.slug}'
+
+
+class CityManager(models.Manager):
+    def active(self):
+        return self.filter(status=True)
+
+
+class Cities(models.Model):
+    parent = models.ForeignKey('self', default=None, null=True, blank=True, on_delete=models.SET_NULL,
+                               related_name='children', verbose_name="زیردسته")
+    title = models.CharField(max_length=200, verbose_name="نام استان")
+    slug = models.SlugField(max_length=100, unique=True, verbose_name="آدرس استان")
+    status = models.BooleanField(default=True, verbose_name="آیا نمایش داده شود؟")
+    position = models.IntegerField(verbose_name="پوزیشن")
+
+    objects = CityManager()
+
+    class Meta:
+        verbose_name = "دسته‌بندی"
+        verbose_name_plural = "دسته‌بندی ها"
+        ordering = ['parent__id', 'position']
+
+    def __str__(self):
+        return self.title
+
+    # def get_absolute_url(self):
+    #     return f'/categories/{self.slug}'
+
+
+class Services(models.Model):
+    services = models.CharField(max_length=300, verbose_name='jobs')
+
+
+Job_CHOICES = [
+    ('d', 'دور کاری'),
+    ('t', 'تمام وقت'),
+    ('n', 'پاره وقت'),
+    ('p', 'پروژه ای'),
+
+]
+STATUS_CHOICES = (
+    ('p', "منتشر شده"),
+    ('i', "در حال بررسی"),
+    ('b', "منقضی شده"),
+)
+SOLDIER_CHOICES = (
+    ('p', "معاف یا پایان خدمت"),
+    ('i', "مهم نیست"),
+)
+
+
+class Jobs(models.Model):
+    author = models.ForeignKey(User, models.CASCADE, verbose_name='نویسنده')
+    title = models.CharField(max_length=300, verbose_name='عنوان شغلی')
+    company = models.CharField(max_length=300, verbose_name='نام شرکت')
+    description = models.TextField(verbose_name='توضیحات شغلی')
+    address = models.TextField(verbose_name='آدرس شرکت شما')
+    important = TaggableManager()
+    services = models.ManyToManyField(Services,verbose_name='وظایف')
+    price = models.PositiveIntegerField(verbose_name='حقوق')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
+    city = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
+    Type = models.CharField(max_length=1, default='d', choices=Job_CHOICES, verbose_name="وضعیت شغلی")
+    status = models.CharField(max_length=1, default='i', choices=STATUS_CHOICES, verbose_name="وضعیت")
+    soldiering = models.CharField(max_length=1, default='i', choices=SOLDIER_CHOICES, verbose_name="وضعیت نظام وظیفه")

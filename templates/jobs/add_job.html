@@ -1,0 +1,119 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <div class="container">
+        <div class="mb-15 mb-lg-23">
+            <div class="row">
+                <div class="col-xxxl-9 px-lg-13 px-6">
+                    <h5 class="font-size-6 font-weight-semibold mb-11"> بروزرسانی پروفایل شرکت</h5>
+                    <div class="contact-form bg-white shadow-8 rounded-4 pl-sm-10 pl-4 pr-sm-11 pr-4 pt-15 pb-13">
+                        <div class="upload-file mb-16 text-center">
+                            <div id="userActions" class="square-144 m-auto px-6 mb-7">
+                                <label for="fileUpload" class="mb-0 font-size-4 text-smoke">انتخاب کنید یا بکشید و
+                                    بیندازید</label>
+                                <input type="file" id="fileUpload" class="sr-only">
+                            </div>
+                            <!-- <img id="imgPrime" src="" alt="uploaded image placeholder" /> -->
+                            <!-- <input type="file" id="upfile"> -->
+                        </div>
+                        <form action="https://uxtheme.net/">
+                            <fieldset>
+                                <div class="row mb-xl-1 mb-9">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            {{ form.title|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+
+                                            {{ form.company|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-8">
+                                    <div class="col-lg-6 mb-xl-0 mb-7">
+                                        <div class="form-group position-relative">
+                                            {{ form.category|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group position-relative">
+                                            {{ form.services|as_crispy_field }}
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{ form.description|as_crispy_field }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{ form.address|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                </div>
+                                  <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group mb-11">
+                                            {{ form.price|as_crispy_field }}
+
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group ">
+
+                                                <label>Tags</label>
+                                                <input type="text" data-role="tagsinput" class="form-control"
+                                                       name="services">
+
+                                            </div>
+                                            <div class="col-md-12">
+                                            <div class="form-group">
+
+                                                <label>Tags</label>
+                                                <input type="text" data-role="tagsinput" class="form-control"
+                                                       name="services">
+                                            </div>
+                                            </div>
+                                                <div class="row mb-8">
+                                                    <div class="col-lg-6 mb-xl-0 mb-7">
+                                                        <div class="form-group position-relative">
+                                                            {{ form.Type|as_crispy_field }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="form-group position-relative">
+                                                            {{ form.soldiering|as_crispy_field }}
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <input type="button" value="بروزرسانی پروفایل"
+                                                       class="btn btn-green btn-h-60 text-white min-width-px-210 rounded-5 text-uppercase">
+                                            </div>
+                                        </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#post-form").submit(function (e) {
+            e.preventDefault();
+        });</script>
+    <script src="{% static 'tags/js/tagsinput.js' %}"></script>
+
+{% endblock %}
