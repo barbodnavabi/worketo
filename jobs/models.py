@@ -63,10 +63,11 @@ class Services(models.Model):
 
 
 Job_CHOICES = [
-    ('d', 'دور کاری'),
-    ('t', 'تمام وقت'),
-    ('n', 'پاره وقت'),
-    ('p', 'پروژه ای'),
+    ('دور کاری', 'دور کاری'),
+    ('تمام وقت', 'تمام وقت'),
+    ('پاره وقت', 'پاره وقت'),
+    ('کارآموزی', 'کارآموزی'),
+    ('پروژه ای', 'پروژه ای'),
 
 ]
 STATUS_CHOICES = (
@@ -75,8 +76,17 @@ STATUS_CHOICES = (
     ('b', "منقضی شده"),
 )
 SOLDIER_CHOICES = (
-    ('p', "معاف یا پایان خدمت"),
-    ('i', "مهم نیست"),
+    ('معاف', "معاف"),
+    ('پایان خدمت', "پایان خدمت"),
+    ('مهم نیست', "مهم نیست"),
+)
+PRICE_CHOICES = (
+    ('توافقی', "توافقی"),
+    ('2 تا 3 میلیون', "2 تا 3 میلیون"),
+    ('8 تا 9 میلیون', "8 تا 9 میلیون"),
+    ('10 تا 12 میلیون', "10 تا 12 میلیون"),
+    ('12 تا 20 میلیون', "12 تا 20 میلیون"),
+    ('دیگر قیمت ها', "دیگر قیمت ها"),
 )
 
 
@@ -86,11 +96,14 @@ class Jobs(models.Model):
     company = models.CharField(max_length=300, verbose_name='نام شرکت')
     description = models.TextField(verbose_name='توضیحات شغلی')
     address = models.TextField(verbose_name='آدرس شرکت شما')
-    important = TaggableManager()
-    services = models.ManyToManyField(Services,verbose_name='وظایف')
-    price = models.PositiveIntegerField(verbose_name='حقوق')
+    important = TaggableManager(blank=True, verbose_name='مهارت های لازم')
+    price = models.CharField(max_length=200, default='i', choices=PRICE_CHOICES, verbose_name="حقوق")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
     city = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
-    Type = models.CharField(max_length=1, default='d', choices=Job_CHOICES, verbose_name="وضعیت شغلی")
-    status = models.CharField(max_length=1, default='i', choices=STATUS_CHOICES, verbose_name="وضعیت")
-    soldiering = models.CharField(max_length=1, default='i', choices=SOLDIER_CHOICES, verbose_name="وضعیت نظام وظیفه")
+    Type = models.CharField(max_length=200, default='d', choices=Job_CHOICES, verbose_name="وضعیت شغلی")
+    status = models.CharField(max_length=200, default='i', choices=STATUS_CHOICES, verbose_name="وضعیت")
+    soldiering = models.CharField(max_length=200, default='مهم نیست', choices=SOLDIER_CHOICES,
+                                  verbose_name="وضعیت نظام وظیفه")
+
+    def __str__(self):
+        return self.company

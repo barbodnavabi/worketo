@@ -56,7 +56,7 @@
 
 
 
-    <div class="pt-11 pt-lg-27 pb-7 pb-lg-26 bg-black-2 dark-mode-texts">
+   <div class="pt-11 pt-lg-27 pb-7 pb-lg-26 bg-black-2 dark-mode-texts">
       <div class="container">
         <!-- Section Top -->
         <div class="row align-items-center pb-14">
@@ -76,26 +76,29 @@
         </div>
         <!-- End Section Top -->
         <div class="row justify-content-center">
+            {% for job in jobs %}
           <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
             <!-- Start Feature One -->
             <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
               <div class="d-block mb-7">
                 <a href="#"><img src="image/l1/png/feature-brand-1.png" alt=""></a>
               </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">شرکت گوگل</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#"> طراح محصول </a></h2>
+              <a href="#" class="font-size-3 d-block mb-0 text-gray">{{ job.company }}</a>
+              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#"> {{ job.title }} </a></h2>
               <ul class="list-unstyled mb-1 card-tag-list">
+                  {% if job.city %}
                 <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
+                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> {{ job.city }}
                   </a></li>
+                  {% endif %}
                 <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
+                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> {{ job.soldiering }}
                   </a></li>
                 <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
+                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i>{{ job.price }}
                   </a></li>
               </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
+              <p class="mb-7 font-size-4 text-gray">{{ job.description|truncatewords:'10' }}</p>
               <div class="card-btn-group">
                 <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
                 <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
@@ -103,143 +106,10 @@
             </div>
             <!-- End Feature One -->
           </div>
-          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-            <!-- Start Feature One -->
-            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
-              <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-2.png" alt=""></a>
-              </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">ایراندبی</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#">طراح رابط و تجربه کاربری</a></h2>
-              <ul class="list-unstyled mb-1 card-tag-list">
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
-                  </a></li>
-              </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
-              <div class="card-btn-group">
-                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
-                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
-              </div>
-            </div>
-            <!-- End Feature One -->
-          </div>
-          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-            <!-- Start Feature One -->
-            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
-              <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-3.png" alt=""></a>
-              </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">شاپیفای</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#">آی او اس دولوپر</a></h2>
-              <ul class="list-unstyled mb-1 card-tag-list">
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
-                  </a></li>
-              </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
-              <div class="card-btn-group">
-                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
-                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
-              </div>
-            </div>
-            <!-- End Feature One -->
-          </div>
-          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-            <!-- Start Feature One -->
-            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
-              <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-4.png" alt=""></a>
-              </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">اوبر</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#">طراح هنری </a></h2>
-              <ul class="list-unstyled mb-1 card-tag-list">
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
-                  </a></li>
-              </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
-              <div class="card-btn-group">
-                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
-                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
-              </div>
-            </div>
-            <!-- End Feature One -->
-          </div>
-          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-            <!-- Start Feature One -->
-            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
-              <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-5.png" alt=""></a>
-              </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">فیسبوک</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#">مدیر مارکتینگ </a></h2>
-              <ul class="list-unstyled mb-1 card-tag-list">
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
-                  </a></li>
-              </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
-              <div class="card-btn-group">
-                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
-                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
-              </div>
-            </div>
-            <!-- End Feature One -->
-          </div>
-          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-            <!-- Start Feature One -->
-            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
-              <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-6.png" alt=""></a>
-              </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">اکولوس</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#">مهندس نرم افزار</a></h2>
-              <ul class="list-unstyled mb-1 card-tag-list">
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
-                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> برلین
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
-                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> تمام وقت
-                  </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
-                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i> 80-90میلیون
-                  </a></li>
-              </ul>
-              <p class="mb-7 font-size-4 text-gray">ما به دنبال مشاوران ثبت نام هستیم که به دنبال گرفتن 30-35 قرار ملاقات در هفته هستند. همه لیدها از قبل برنامه ریزی شده اند.</p>
-              <div class="card-btn-group">
-                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
-                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
-              </div>
-            </div>
-            <!-- End Feature One -->
-          </div>
+{% endfor %}
         </div>
       </div>
     </div>
+
 
 {% endblock %}
