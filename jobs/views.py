@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView,DetailView
 
 from jobs.mixins import FormValidMixin
 from jobs.models import Jobs
@@ -28,4 +28,15 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
         "category",
         "city",
         "Type",
-        "soldiering", ]
+        "soldiering",
+        "sex",
+         'service',]
+
+
+class JobsDetailView(DetailView):
+    model = Jobs
+    template_name = 'jobs/job_detail.html'
+    def get_queryset(self):
+        return Jobs.objects.filter(status='p')
+
+    

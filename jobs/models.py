@@ -1,5 +1,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
+from taggit.models import TaggedItemBase
 
 from account.models import User
 
@@ -47,8 +48,8 @@ class Cities(models.Model):
     objects = CityManager()
 
     class Meta:
-        verbose_name = "دسته‌بندی"
-        verbose_name_plural = "دسته‌بندی ها"
+        verbose_name = "شهر"
+        verbose_name_plural = "شهر ها"
         ordering = ['parent__id', 'position']
 
     def __str__(self):
@@ -58,8 +59,8 @@ class Cities(models.Model):
     #     return f'/categories/{self.slug}'
 
 
-class Services(models.Model):
-    services = models.CharField(max_length=300, verbose_name='jobs')
+class Services(TaggedItemBase):
+    content_object = models.ForeignKey('JObs', on_delete=models.CASCADE,related_name='services')
 
 
 Job_CHOICES = [
@@ -89,14 +90,23 @@ PRICE_CHOICES = (
     ('دیگر قیمت ها', "دیگر قیمت ها"),
 )
 
+SEX_CHOICES = (
+    ('مرد', "مرد"),
+    ('زن', "زن"),
+    ('مهم نیست', "مهم نیست"),
+   
+
+)
 
 class Jobs(models.Model):
     author = models.ForeignKey(User, models.CASCADE, verbose_name='نویسنده')
     title = models.CharField(max_length=300, verbose_name='عنوان شغلی')
     company = models.CharField(max_length=300, verbose_name='نام شرکت')
     description = models.TextField(verbose_name='توضیحات شغلی')
+    employer_description = models.TextField(verbose_name='نفش کارمند در شرکت')
     address = models.TextField(verbose_name='آدرس شرکت شما')
     important = TaggableManager(blank=True, verbose_name='مهارت های لازم')
+    service = TaggableManager(through=Services,blank=True, verbose_name='مهارت های لازم',related_name='services')
     price = models.CharField(max_length=200, default='i', choices=PRICE_CHOICES, verbose_name="حقوق")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
     city = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
@@ -104,6 +114,9 @@ class Jobs(models.Model):
     status = models.CharField(max_length=200, default='i', choices=STATUS_CHOICES, verbose_name="وضعیت")
     soldiering = models.CharField(max_length=200, default='مهم نیست', choices=SOLDIER_CHOICES,
                                   verbose_name="وضعیت نظام وظیفه")
+    sex = models.CharField(max_length=200, default='مهم نیست', choices=SEX_CHOICES,
+                                  verbose_name="جنسیت")   
+    date=models.DateTimeField(auto_now_add=True,verbose_name='زمان ثبت')                                                       
 
     def __str__(self):
         return self.company
