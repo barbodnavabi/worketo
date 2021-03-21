@@ -35,18 +35,24 @@
                                     </div>
                                 </div>
                                 <div class="row mb-8">
-                                    <div class="col-lg-6 mb-xl-0 mb-7">
+                                    <div class="col-lg-4 mb-xl-0 mb-7">
                                         <div class="form-group position-relative">
                                             {{ form.category|as_crispy_field }}
                                         </div>
                                     </div>
-                                   </div>
-                                <div class="col-lg-4">
+                             
+                               <div class="col-lg-4">
                                       <div class="form-group position-relative">
                                            {{ form.sex|as_crispy_field }}
 
                                        </div>
-                            </div>
+                            </div> 
+                               <div class="col-lg-4">
+                                      <div class="form-group position-relative">
+                                           {{ form.city|as_crispy_field }}
+
+                                       </div>
+                            </div> 
 
 
                                 </div>
@@ -56,6 +62,13 @@
                                             {{ form.description|as_crispy_field }}
                                         </div>
                                     </div>
+                                                                    {% comment %} <div class="row"> {% endcomment %}
+                                    {% comment %} <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{ form.employer_description|as_crispy_field }}
+                                        </div>
+                                    </div> {% endcomment %}
+
 
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -70,22 +83,38 @@
                                             {{ form.price|as_crispy_field }}
 
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12 mb-3">
                                             <div class="form-group ">
 
                                                 <label>مهارت های کلیدی</label>
                                                 <input type="text" data-role="tagsinput" class="form-control"
                                                        name="important">
+                                                       </div>
+                                                       </div>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
 
-                                            </div>
                                         <div class="col-md-12">
                                             <div class="form-group ">
 
-                                                <label>مهارت های کلیدی</label>
+                                                <label>مزایا کاری</label>
                                                 <input type="text" data-role="tagsinput" class="form-control"
                                                        name="service">
-
+                                            </div> 
                                             </div>
+                                                                 <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+                                                       <br>
+
 {#                                            <div class="form-group">#}
 {##}
 {#                                                <label>مهارت های مورد نیاز</label>#}

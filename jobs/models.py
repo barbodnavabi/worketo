@@ -86,7 +86,7 @@ PRICE_CHOICES = (
     ('2 تا 3 میلیون', "2 تا 3 میلیون"),
     ('8 تا 9 میلیون', "8 تا 9 میلیون"),
     ('10 تا 12 میلیون', "10 تا 12 میلیون"),
-    ('12 تا 20 میلیون', "12 تا 20 میلیون"),
+    ('12 تا 20 میلیون' , "12 تا 20 میلیون"),
     ('دیگر قیمت ها', "دیگر قیمت ها"),
 )
 
@@ -107,7 +107,7 @@ class Jobs(models.Model):
     address = models.TextField(verbose_name='آدرس شرکت شما')
     important = TaggableManager(blank=True, verbose_name='مهارت های لازم')
     service = TaggableManager(through=Services,blank=True, verbose_name='مهارت های لازم',related_name='services')
-    price = models.CharField(max_length=200, default='i', choices=PRICE_CHOICES, verbose_name="حقوق")
+    price = models.CharField(max_length=200, default='12 تا 20 میلیون', choices=PRICE_CHOICES, verbose_name="حقوق")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
     city = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
     Type = models.CharField(max_length=200, default='d', choices=Job_CHOICES, verbose_name="وضعیت شغلی")

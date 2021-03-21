@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView,DetailView
 
 from jobs.mixins import FormValidMixin
-from jobs.models import Jobs
+from jobs.models import Jobs,Cities
 
 
 class JobListView(ListView):
@@ -30,7 +30,8 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
         "Type",
         "soldiering",
         "sex",
-         'service',]
+         'service',
+         'employer_description',]
 
 
 class JobsDetailView(DetailView):
@@ -40,3 +41,25 @@ class JobsDetailView(DetailView):
         return Jobs.objects.filter(status='p')
 
     
+class SearchjobsView(ListView):
+    template_name = 'jobs/job_list.html'
+     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cities"] = Cities.objects.all()
+        return context
+    
+    def get_queryset(self):
+        request = self.request
+        type = request.GET.get('type')
+        city = request.GET.get('city')
+        title = request.GET.get('title')
+        if type is not None:
+            return Jobs.objects.filter(Type__icontains=type)
+        if city is not None:
+            return Jobs.objects.filter(city__title__icontains=city)
+        if title is not None:
+            return Jobs.objects.filter(title__icontains=title)
+        # type = request.GET.get('Type')
+        # if type is not None:
+        #     return Jobs.objects.filter(Type__icontains=type)
