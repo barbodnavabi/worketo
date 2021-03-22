@@ -1,7 +1,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
 from taggit.models import TaggedItemBase
-
 from account.models import User
 
 
@@ -81,6 +80,13 @@ SOLDIER_CHOICES = (
     ('پایان خدمت', "پایان خدمت"),
     ('مهم نیست', "مهم نیست"),
 )
+EXPERIANCE_CHOICES = (
+    ('جونیور', "جونیور"),
+    ('سنیور', "سنیور"),
+    ('مید لول', "مید لول"),
+    ('مهم نیست', "مهم نیست"),
+)
+
 PRICE_CHOICES = (
     ('توافقی', "توافقی"),
     ('2 تا 3 میلیون', "2 تا 3 میلیون"),
@@ -116,7 +122,21 @@ class Jobs(models.Model):
                                   verbose_name="وضعیت نظام وظیفه")
     sex = models.CharField(max_length=200, default='مهم نیست', choices=SEX_CHOICES,
                                   verbose_name="جنسیت")   
+    experiance = models.CharField(max_length=200, default='مهم نیست', choices=EXPERIANCE_CHOICES,
+                                  verbose_name="سطح تجربه")   
     date=models.DateTimeField(auto_now_add=True,verbose_name='زمان ثبت')                                                       
 
     def __str__(self):
         return self.company
+
+
+
+
+
+
+class massage(models.Model):
+    name=models.CharField(max_length=300,verbose_name='نام')
+    pdf=models.FileField(upload_to='pdf',blank=True,null=True)
+    phone=models.CharField(max_length=300,verbose_name='تلفن')
+    email=models.EmailField(("ایمیل"), max_length=254,blank=True,null=True)
+    revicer=models.ForeignKey(User, verbose_name=('دریافت کننده'), on_delete=models.CASCADE)

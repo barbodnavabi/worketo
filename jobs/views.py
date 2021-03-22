@@ -3,9 +3,9 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView,DetailView
 
-from jobs.mixins import FormValidMixin
+from jobs.mixins import FormValidMixin,RevicerMixin
 from jobs.models import Jobs,Cities
-
+from .forms import MassegeForm
 
 class JobListView(ListView):
     model = Jobs
@@ -34,9 +34,17 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
          'employer_description',]
 
 
-class JobsDetailView(DetailView):
+class JobsDetailView(RevicerMixin,DetailView):
     model = Jobs
     template_name = 'jobs/job_detail.html'
+    
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["massegeform"] = MassegeForm(self.request.POST or None)
+        return context
+    
+
     def get_queryset(self):
         return Jobs.objects.filter(status='p')
 

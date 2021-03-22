@@ -43,10 +43,10 @@
             </form>
             <div class="pt-12 ml-lg-0 ml-md-15">
               <div class="d-flex align-items-center justify-content-between">
-                <h5 class="font-size-4 font-weight-normal text-default-color">
+                {% comment %} <h5 class="font-size-4 font-weight-normal text-default-color">
                   <span class="heading-default-color">120</span>
                   نتایج برای<span class="heading-default-color">طراح رابط کاربری</span>
-                </h5>
+                </h5> {% endcomment %}
               </div>
               <div class="pt-6">
                 <div class="row justify-content-center">
@@ -54,20 +54,20 @@
                   <div class="col-12 col-lg-6">
                      <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
               <div class="d-block mb-7">
-                <a href="#"><img src="image/l1/png/feature-brand-1.png" alt=""></a>
+                {% comment %} <a href="{% url 'job-detail' job.id %}"><img src="image/l1/png/feature-brand-1.png" alt=""></a> {% endcomment %}
               </div>
-              <a href="#" class="font-size-3 d-block mb-0 text-gray">{{ job.company }}</a>
-              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#"> {{ job.title }} </a></h2>
+              <a href="{% url 'job-detail' job.id %}" class="font-size-3 d-block mb-0 text-gray">{{ job.company }}</a>
+              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="{% url 'job-detail' job.id %}"> {{ job.title }} </a></h2>
               <ul class="list-unstyled mb-1 card-tag-list">
                   {% if job.city %}
-                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
+                <li><a href="{% url 'job-detail' job.id %}" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
                     <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> {{ job.city }}
                   </a></li>
                   {% endif %}
-                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
+                <li><a href="{% url 'job-detail' job.id %}" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
                     <i class="fa fa-briefcase mr-2 font-weight-bold"></i> {{ job.soldiering }}
                   </a></li>
-                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
+                <li><a href="{% url 'job-detail' job.id %}" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
                     <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i>{{ job.price }}
                   </a></li>
               </ul>
@@ -81,10 +81,10 @@
                   {% endfor %}
                 </div>
               </div>
-              <div class="text-center pt-5 pt-lg-13">
+              {% comment %} <div class="text-center pt-5 pt-lg-13">
                 <a class="text-green font-weight-bold text-uppercase font-size-3 d-flex align-items-center justify-content-center" href="#">بارگذاری بیشتر<i class="fas fa-sort-down ml-3 mt-n2 font-size-4"></i>
                 </a>
-              </div>
+              </div> {% endcomment %}
             </div>
             <!-- form end -->
           </div>
