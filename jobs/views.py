@@ -2,11 +2,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView,DetailView
-
-from jobs.mixins import FormValidMixin,RevicerMixin
+from jobs.mixins import FormValidMixin
 from jobs.models import Jobs,Cities
 from .forms import MassegeForm
-
+from django.views.generic.edit import FormMixin
 class JobListView(ListView):
     model = Jobs
     template_name = 'jobs/jobs_list.html'
@@ -40,20 +39,36 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
          'employer_description',]
 
 
-class JobsDetailView(RevicerMixin,DetailView):
+class JobsDetailView(FormMixin,DetailView):
     model = Jobs
-    template_name = 'jobs/job_detail.html'
+    template_name = 'jobs/jobDetail.html'
     
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["massegeform"] = MassegeForm(self.request.POST or None)
         return context
     
 
     def get_queryset(self):
         return Jobs.objects.filter(status='p')
 
+    def get_success_url(self):
+        return reverse('job-detail', kwargs={'pk': self.object.pk})
+
+    def post(self, request, *args, **kwargs):
+
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        self.obj = form.save(commit=False)
+        self.obj.revicer = self.object.author
+        form.save()
+        return super().form_valid(form)
     
 class SearchjobsView(ListView):
     template_name = 'jobs/job_list.html'

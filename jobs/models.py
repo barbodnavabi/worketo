@@ -112,7 +112,7 @@ class Jobs(models.Model):
     employer_description = models.TextField(verbose_name='نفش کارمند در شرکت')
     address = models.TextField(verbose_name='آدرس شرکت شما')
     important = TaggableManager(blank=True, verbose_name='مهارت های لازم')
-    service = TaggableManager(through=Services,blank=True, verbose_name='مهارت های لازم',related_name='services')
+    service = TaggableManager(through=Services,blank=True, verbose_name='مسئولیت ها',related_name='services')
     price = models.CharField(max_length=200, default='12 تا 20 میلیون', choices=PRICE_CHOICES, verbose_name="حقوق")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
     state = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)

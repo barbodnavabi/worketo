@@ -1,138 +1,145 @@
 {% extends 'shared/base.html' %}
 
 {% block content %}
- <!-- top header wrapper start -->
-    <div class="page_title_section">
+<!-- top header wrapper start -->
+<div class="page_title_section">
 
-        <div class="page_header">
-            <div class="container">
-                <div class="row">
-                    <!-- section_heading start -->
-                    <div class="col-lg-9 col-md-9 col-12 col-sm-8">
+    <div class="page_header">
+        <div class="container">
+            <div class="row">
+                <!-- section_heading start -->
+                <div class="col-lg-9 col-md-9 col-12 col-sm-8">
 
-                        <h1>آگهی شغلی</h1>
+                    <h1>آگهی شغلی</h1>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 col-sm-4">
+                    <div class="sub_title_section">
+                        <ul class="sub_title">
+                            <li> <a href="{% url 'index' %}"> خانه </a>&nbsp; / &nbsp; </li>
+                            <li>آگهی شغلی</li>
+                        </ul>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-12 col-sm-4">
-                        <div class="sub_title_section">
-                            <ul class="sub_title">
-                                <li> <a href="{% url 'index' %}"> خانه </a>&nbsp; / &nbsp; </li>
-                                <li>آگهی شغلی</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- top header wrapper end -->
+<!--job listing filter  wrapper start-->
+<div class="job_filter_listing_wrapper jb_cover">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+
+
+
+            </div>
+            <div class="col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="job_listing_left_side jb_cover">
+                    <div class="filter-area jb_cover">
+
+                        <select>
+                            <option>مرتب سازی بر اساس</option>
+                            <option>جدید ترین</option>
+                            <option>محبوب ترین</option>
+                            <option>بالاترین امتیاز</option>
+                        </select>
+
+                        <div class="list-grid">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#grid"> <i
+                                            class="flaticon-four-grid-layout-design-interface-symbol"></i></a>
+                                </li>
+
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- top header wrapper end -->
-    <!--job listing filter  wrapper start-->
-    <div class="job_filter_listing_wrapper jb_cover">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-12 d-none d-sm-none d-md-none d-lg-block d-xl-block">
-
-    
-
-                </div>
-                <div class="col-lg-9 col-md-12 col-sm-12 col-12">
-                    <div class="job_listing_left_side jb_cover">
-                        <div class="filter-area jb_cover">
-
-                            <select>
-                                <option>مرتب سازی بر اساس</option>
-                                <option>جدید ترین</option>
-                                <option>محبوب ترین</option>
-                                <option>بالاترین امتیاز</option>
-                            </select>
-
-                            <div class="list-grid">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#grid"> <i class="flaticon-four-grid-layout-design-interface-symbol"></i></a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="showpro">
-                                <p>شما نگاهی به {{jobcount}} آگهی دارید</p>
-                            </div>
+                        <div class="showpro">
+                            <p>شما نگاهی به {{jobcount}} آگهی دارید</p>
                         </div>
-                        <div class="tab-content btc_shop_index_content_tabs_main jb_cover">
-                            <div id="grid" class="tab-pane active">
-                                <div class="row">
-                                                {% for job in object_list %}
+                    </div>
+                    <div class="tab-content btc_shop_index_content_tabs_main jb_cover">
+                        <div id="grid" class="tab-pane active">
+                            <div class="row">
+                                {% for job in object_list %}
 
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
 
-                                        <div class="job_listing_left_fullwidth job_listing_grid_wrapper jb_cover">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                                    <div class="jp_job_post_side_img">
-                                                        <br> <span>{{job.company}}</span>
-                                                    </div>
-                                                    <div class="jp_job_post_right_cont">
-                                                        <h4><a href="{% url 'job-detail' job.id %}">{{job.title}}</a></h4>
-
-                                                        <ul>
-                                                            <li><i class="flaticon-cash"></i>&nbsp; {{job.price}}</li>
-                                                            {% if job.state %}
-                                                            <li><i class="flaticon-location-pointer"></i>&nbsp; {{job.state}}</li>
-                                                            {% endif %}
-                                                        </ul>
-                                                    </div>
+                                    <div class="job_listing_left_fullwidth job_listing_grid_wrapper jb_cover">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="jp_job_post_side_img">
+                                                    <br> <span>{{job.company}}</span>
                                                 </div>
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                                    <div class="jp_job_post_right_btn_wrapper jb_cover">
-                                                        <ul>
-                                                            <li>
+                                                <div class="jp_job_post_right_cont">
+                                                    <h4><a href="{% url 'job-detail' job.id %}">{{job.title}}</a></h4>
 
-                                                            </li>
-                                                            <li><a href="{% url 'job-detail' job.id %}">{{job.Type}}</a></li>
-                                                            <li> <a href="{% url 'job-detail' job.id %}" >جزئیات</a></li>
-                                                        </ul>
-                                                    </div>
+                                                    <ul>
+                                                        <li><i class="flaticon-cash"></i>&nbsp; {{job.price}}</li>
+                                                        {% if job.state %}
+                                                        <li><i class="flaticon-location-pointer"></i>&nbsp;
+                                                            {{job.state}}</li>
+                                                        {% endif %}
+                                                    </ul>
                                                 </div>
-
                                             </div>
+                                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="jp_job_post_right_btn_wrapper jb_cover">
+                                                    <ul>
+                                                        <li>
+
+                                                        </li>
+                                                        <li><a href="{% url 'job-detail' job.id %}">{{job.Type}}</a>
+                                                        </li>
+                                                        <li> <a href="{% url 'job-detail' job.id %}">جزئیات</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
-                                     {% endfor %}
                                 </div>
-                            </div>
-                                </div>
-                            </div>
-{% if page_obj %}
-									
-								</ul>
-                            <div class="blog_pagination_section jb_cover">
-                                <ul>
-                                      {% if page_obj.has_previous %}
-                                    <li><a href="?page=1">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="?page={{ page_obj.previous_page_number }}" class="prev"> <i class="flaticon-left-arrow"></i> </a>
-                                    </li>
-                                    <li class="third_pagger"><a href="#">     {{ page_obj.number }}</a>
-                                    </li>
-        {% endif %}
-        {% if page_obj.has_next %}
-         <li>
-            <a href="?page={{ page_obj.next_page_number }}" class="next"> <i class="flaticon-right-arrow"></i> </a> </li>
-           <li>  <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>     </li>    
-        {% endif %}
-                                </ul>
-                                <br>
-                                <hr>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
+                {% if page_obj %}
 
-                       {% endif %}     
+                </ul>
+                <div class="blog_pagination_section jb_cover">
+                    <ul>
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page=1">1</a>
+                        </li>
+                        <li>
+                            <a href="?page={{ page_obj.previous_page_number }}" class="prev"> <i
+                                    class="flaticon-left-arrow"></i> </a>
+                        </li>
+                        <li class="third_pagger"><a href="#"> {{ page_obj.number }}</a>
+                        </li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li>
+                            <a href="?page={{ page_obj.next_page_number }}" class="next"> <i
+                                    class="flaticon-right-arrow"></i> </a>
+                        </li>
+                        <li> <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                    <br>
+                    <hr>
+                </div>
             </div>
         </div>
     </div>
+
+    {% endif %}
+</div>
+</div>
+</div>
 
 
 {% endblock content %}
