@@ -9,7 +9,7 @@ from .forms import MassegeForm
 
 class JobListView(ListView):
     model = Jobs
-    template_name = 'jobs/job_list.html'
+    template_name = 'jobs/jobs_list.html'
     queryset = Jobs.objects.filter(status='p')
 
 
