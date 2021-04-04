@@ -115,7 +115,7 @@ class Jobs(models.Model):
     service = TaggableManager(through=Services,blank=True, verbose_name='مهارت های لازم',related_name='services')
     price = models.CharField(max_length=200, default='12 تا 20 میلیون', choices=PRICE_CHOICES, verbose_name="حقوق")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='دسته بندی', blank=True, null=True)
-    city = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
+    state = models.ForeignKey(Cities, on_delete=models.SET_NULL, verbose_name='شهر', blank=True, null=True)
     Type = models.CharField(max_length=200, default='d', choices=Job_CHOICES, verbose_name="وضعیت شغلی")
     status = models.CharField(max_length=200, default='i', choices=STATUS_CHOICES, verbose_name="وضعیت")
     soldiering = models.CharField(max_length=200, default='مهم نیست', choices=SOLDIER_CHOICES,
