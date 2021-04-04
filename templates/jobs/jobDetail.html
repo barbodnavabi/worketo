@@ -1,4 +1,5 @@
 {% extends 'shared/base.html' %}
+{% load crispy_forms_filters %}
 
 {% block content %}
     <div class="page_title_section">
@@ -109,7 +110,27 @@
                                 <div class="jp_listing_list_icon_cont_wrapper">
                                     <ul>
                                         <li>دسته بندی:</li>
+                                    {% if object.category %}
                                         <li>{{object.category}}</li>
+                                        {% else %}
+                                        <li>بدون دسته بندی</li>
+                                {% endif %}
+                                    </ul>
+                                </div>
+
+                            </div>
+                                     <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                <div class="jp_listing_list_icon">
+                                    <i class="fa fa-th-large"></i>
+                                </div>
+                                <div class="jp_listing_list_icon_cont_wrapper">
+                                    <ul>
+                                        <li> استان :</li>
+                            {% if object.state %}
+                                        <li>{{object.state}}</li>
+                                        {% else %}
+                                        <li>بدون استان</li>
+                                {% endif %}
                                     </ul>
                                 </div>
                             </div>
@@ -153,7 +174,14 @@
                         </div>
                         <div class="jp_job_res jb_cover">
                             <h2 class="job_description_heading">درخواست</h2>
-                            
+                            <form method='post'>
+                            {% csrf_token %}
+                            {{form.name|as_crispy_field}}
+                            {{form.phone|as_crispy_field}}
+                            {{form.email|as_crispy_field}}
+                            {{form.pdf|as_crispy_field}}
+                            <button class='btn btn-danger btn-block'>درخواست</button>
+                            </form>
 
                         </div>
                         <div class="jp_job_res jp_listing_left_wrapper jb_cover">

@@ -140,3 +140,7 @@ class massage(models.Model):
     phone=models.CharField(max_length=300,verbose_name='تلفن')
     email=models.EmailField(("ایمیل"), max_length=254,blank=True,null=True)
     revicer=models.ForeignKey(User, verbose_name=('دریافت کننده'), on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+    

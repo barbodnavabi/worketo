@@ -6,6 +6,7 @@ from jobs.mixins import FormValidMixin
 from jobs.models import Jobs,Cities
 from .forms import MassegeForm
 from django.views.generic.edit import FormMixin
+from django.urls import reverse
 class JobListView(ListView):
     model = Jobs
     template_name = 'jobs/jobs_list.html'
@@ -42,6 +43,7 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
 class JobsDetailView(FormMixin,DetailView):
     model = Jobs
     template_name = 'jobs/jobDetail.html'
+    form_class= MassegeForm
     
     
     def get_context_data(self, **kwargs):
