@@ -55,7 +55,7 @@
                                 </ul>
                             </div>
                             <div class="showpro">
-                                <p>شما نگاهی به 01 تا 20 دارید</p>
+                                <p>شما نگاهی به {{jobcount}} آگهی دارید</p>
                             </div>
                         </div>
                         <div class="tab-content btc_shop_index_content_tabs_main jb_cover">
@@ -102,25 +102,25 @@
                             </div>
                                 </div>
                             </div>
+{% if page_obj %}
+									
+								</ul>
                             <div class="blog_pagination_section jb_cover">
                                 <ul>
+                                      {% if page_obj.has_previous %}
+                                    <li><a href="?page=1">1</a>
+                                    </li>
                                     <li>
-                                        <a href="#" class="prev"> <i class="flaticon-left-arrow"></i> </a>
+                                        <a href="?page={{ page_obj.previous_page_number }}" class="prev"> <i class="flaticon-left-arrow"></i> </a>
                                     </li>
-                                    <li><a href="#">1</a>
+                                    <li class="third_pagger"><a href="#">     {{ page_obj.number }}</a>
                                     </li>
-                                    <li class="third_pagger"><a href="#">2</a>
-                                    </li>
-                                    <li class="d-block d-sm-block d-md-block d-lg-block"><a href="#">3</a>
-                                    </li>
-                                    <li class="d-none d-sm-block d-md-block d-lg-block"><a href="#">...</a>
-                                    </li>
-                                    <li class="d-none d-sm-block d-md-block d-lg-block"><a href="#">6</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="next"> <i class="flaticon-right-arrow"></i> </a>
-                                    </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+         <li>
+            <a href="?page={{ page_obj.next_page_number }}" class="next"> <i class="flaticon-right-arrow"></i> </a> </li>
+           <li>  <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>     </li>    
+        {% endif %}
                                 </ul>
                                 <br>
                                 <hr>
@@ -129,6 +129,7 @@
                     </div>
                 </div>
 
+                       {% endif %}     
             </div>
         </div>
     </div>

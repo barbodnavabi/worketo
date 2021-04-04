@@ -11,6 +11,12 @@ class JobListView(ListView):
     model = Jobs
     template_name = 'jobs/jobs_list.html'
     queryset = Jobs.objects.filter(status='p')
+    paginate_by= 1
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["jobcount"] = Jobs.objects.filter(status='p').count()
+        return context
+    
 
 
 
