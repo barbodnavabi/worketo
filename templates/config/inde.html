@@ -1,0 +1,115 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+          <!-- .Hero pattern -->
+      <div class="pos-abs-tr w-50 z-index-n2">
+        <img src="{% static 'image/patterns/hero-pattern.png'%}" alt="" class="gr-opacity-1">
+      </div>
+      <!-- ./Hero pattern -->
+      <div class="container">
+        <div class="row position-relative align-items-center">
+          <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-12 pt-lg-13 pb-lg-33 pb-xl-34 pb-md-33 pb-10 aos-init aos-animate" data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
+            <h1 class="font-size-11 mb-12 pr-md-30 pr-lg-0">بهترین شغل یعنی شغل رویاییت رو پیدا کن </h1>
+            <div class="">
+              <!-- .search-form -->
+              <form action="https://uxtheme.net/" class="search-form shadow-6">
+                <div class="filter-search-form-1 bg-white rounded-sm shadow-4">
+                  <div class="filter-inputs">
+                    <div class="form-group position-relative">
+                      <input class="form-control focus-reset pl-13" type="text" id="keyword" placeholder="عنوان شغل">
+                      <span class="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6"><i class="icon icon-zoom-2 text-primary font-weight-bold"></i></span>
+                    </div>
+                    <!-- .select-city starts -->
+                    <div class="form-group position-relative">
+                      <select name="country" id="country" class="nice-select pl-13 h-100 arrow-3 font-size-4" style="display: none;">
+                        <option value="" data-display="محل" class="text-uppercase"> محل </option>
+                        <option value="">آمریکا</option>
+                        <option value="">عربستان</option>
+                        <option value="">بنگلادش</option>
+                        <option value="">پاکستان</option>
+                      </select><div class="nice-select pl-13 h-100 arrow-3 font-size-4" tabindex="0"><span class="current">محل</span><ul class="list"><li data-value="" data-display="محل" class="option selected"> محل </li><li data-value="" class="option">آمریکا</li><li data-value="" class="option">عربستان</li><li data-value="" class="option">بنگلادش</li><li data-value="" class="option">پاکستان</li></ul></div>
+                      <span class="h-100 w-px-50 pos-abs-tl d-flex align-items-center justify-content-center font-size-6"><i class="icon icon-pin-3 text-primary font-weight-bold"></i></span>
+                    </div>
+                    <!-- ./select-city ends -->
+                  </div>
+                  <!-- .Hero Button -->
+                  <div class="button-block">
+                    <button class="btn btn-primary line-height-reset h-100 btn-submit w-100 text-uppercase">جستجو</button>
+                  </div>
+                  <!-- ./Hero Button -->
+                </div>
+              </form>
+              <!-- ./search-form -->
+              <p class="heading-default-color font-size-3 pt-7"><span class="text-smoke">جستجو کلید واژه مثلا</span>  طراح محصول </p>
+            </div>
+          </div>
+          <!-- Hero Right Image -->
+          <div class="col-lg-6 col-md-4 col-sm-6 col-xs-6 col-8 pos-abs-br z-index-n1 position-static position-md-absolute mx-auto ml-md-auto aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
+            <div class=" ml-xxl-23 ml-xl-12 ml-md-7">
+              <img src="{% static 'image/l1/png/hero-image-man.png'%}" alt="" class="w-100">
+            </div>
+          </div>
+          <!-- ./Hero Right Image -->
+        </div>
+      </div>
+    </div>
+
+
+
+   <div class="pt-11 pt-lg-27 pb-7 pb-lg-26 bg-black-2 dark-mode-texts">
+      <div class="container">
+        <!-- Section Top -->
+        <div class="row align-items-center pb-14">
+          <!-- Section Title -->
+          <div class="col-12 col-xl-6 col-lg-6">
+            <div class="text-center text-lg-left mb-13 mb-lg-0">
+              <h2 class="font-size-9 font-weight-bold"> مشاغل جدید </h2>
+            </div>
+          </div>
+          <!-- Section Button -->
+          <div class="col-12 col-xl-6 col-lg-6">
+            <div class="text-center text-lg-right">
+              <a class="btn btn-outline-white text-uppercase" href="#">جستجو همه</a>
+            </div>
+          </div>
+          <!-- Section Button End -->
+        </div>
+        <!-- End Section Top -->
+        <div class="row justify-content-center">
+            {% for job in jobs %}
+          <div class="col-12 col-lg-4 col-md-6 px-xxl-7 aos-init aos-animate" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+            <!-- Start Feature One -->
+            <div class="bg-white px-8 pt-9 pb-7 rounded-4 mb-9 feature-cardOne-adjustments">
+              <div class="d-block mb-7">
+                <a href="#"><img src="image/l1/png/feature-brand-1.png" alt=""></a>
+              </div>
+              <a href="#" class="font-size-3 d-block mb-0 text-gray">{{ job.company }}</a>
+              <h2 class="mt-n4"><a class="font-size-7 text-black-2 font-weight-bold mb-4" href="#"> {{ job.title }} </a></h2>
+              <ul class="list-unstyled mb-1 card-tag-list">
+                  {% if job.city %}
+                <li><a href="#" class="bg-regent-opacity-15 text-denim font-size-3 rounded-3">
+                    <i class="icon icon-pin-3 mr-2 font-weight-bold"></i> {{ job.city }}
+                  </a></li>
+                  {% endif %}
+                <li><a href="#" class="bg-regent-opacity-15 text-orange font-size-3 rounded-3">
+                    <i class="fa fa-briefcase mr-2 font-weight-bold"></i> {{ job.soldiering }}
+                  </a></li>
+                <li><a href="#" class="bg-regent-opacity-15 text-eastern font-size-3 rounded-3">
+                    <i class="fa fa-dollar-sign mr-2 font-weight-bold"></i>{{ job.price }}
+                  </a></li>
+              </ul>
+              <p class="mb-7 font-size-4 text-gray">{{ job.description|truncatewords:'10' }}</p>
+              <div class="card-btn-group">
+                <a class="btn btn-green text-uppercase btn-medium rounded-3" href="#">ارسال رزومه</a>
+                <a class="btn btn-outline-mercury text-black-2 text-uppercase btn-medium rounded-3" href="#"><i class="icon icon-bookmark-2 font-weight-bold mr-4 font-size-4"></i>ذخیره</a>
+              </div>
+            </div>
+            <!-- End Feature One -->
+          </div>
+{% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

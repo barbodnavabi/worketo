@@ -1,560 +1,696 @@
 {% load static %}
-<html lang="en"><head><meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<!DOCTYPE html>
+<!-- 
+Template Name: JB desks
+Version: 1.0.0
+Author: Webstrot
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> جاب کمپ - قالب کاریابی آنلاین </title>
-  <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon">
-  <!-- Bootstrap , fonts & icons  -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
-  <link rel="stylesheet" href="{% static 'fonts/icon-font/css/style.css'%}">
-  <link rel="stylesheet" href="{% static 'fonts/typography-font/typo.css'%}">
-  <link rel="stylesheet" href="{% static 'fonts/fontawesome-5/css/all.css'%}">
-  <!-- Plugin'stylesheets  -->
-  <link rel="stylesheet" href="{% static 'plugins/aos/aos.min.css'%}">
-  <link rel="stylesheet" href="{% static 'plugins/fancybox/jquery.fancybox.min.css'%}">
-  <link rel="stylesheet" href="{% static 'plugins/nice-select/nice-select.min.css'%}">
-  <link rel="stylesheet" href="{% static 'plugins/slick/slick.min.css'%}">
-  <link rel="stylesheet" href="{% static 'plugins/ui-range-slider/jquery-ui.css'%}">
-  <!-- Vendor stylesheets  -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'css/main.css'%}">
-    <link rel="stylesheet" href="{% static 'tags/css/tagsinput.css' %}" />
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zxx">
+<!--[endif]-->
 
-  <!-- Custom stylesheet -->
+<head>
+    <meta charset="utf-8" />
+    <title>JB desks Responsive HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="JB desks,job portal,job" />
+    <meta name="keywords" content="JB desks,job portal,job" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+    <!--Template style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropify.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nice-select.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css'%}" />
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 </head>
 
-<body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-  <div class="site-wrapper overflow-hidden ">
-    <!-- Header start  -->
-    <!-- Header Area -->
-    <header class="site-header site-header--menu-right dynamic-sticky-bg py-7 py-lg-0 site-header--absolute site-header--sticky">
-      <div class="container">
-        <nav class="navbar site-navbar offcanvas-active navbar-expand-lg  px-0 py-0">
-          <!-- Brand Logo-->
-          <div class="brand-logo">
-            <a href="index-2.html">
-              <!-- light version logo (logo must be black)-->
-              <img src="image/logo-main-black.png" alt="" class="light-version-logo default-logo">
-              <!-- Dark version logo (logo must be White)-->
-              <img src="image/logo-main-white.png" alt="" class="dark-version-logo">
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="mobile-menu">
-            <div class="navbar-nav-wrapper">
-              <ul class="navbar-nav main-menu">
-                <li class="nav-item dropdown active">
-                  <a class="nav-link dropdown-toggle gr-toggle-arrow" id="navbarDropdown" href="#features" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">خانه<i class="icon icon-small-down"></i></a>
-                  <ul class="gr-menu-dropdown dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li class="drop-menu-item">
-                      <a href="home-1.html">
-                       خانه اصلی 01
-                      </a>
-                    </li>
-                    <li class="drop-menu-item">
-                      <a href="home-2.html">
-                       خانه اصلی 02
-                      </a>
-                    </li>
-                    <li class="drop-menu-item">
-                      <a href="home-3.html">
-                       خانه اصلی 03
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle gr-toggle-arrow" id="navbarDropdown2" href="#features" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحه‌ها<i class="icon icon-small-down"></i></a>
-                  <ul class="gr-menu-dropdown dropdown-menu" aria-labelledby="navbarDropdown2">
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown242" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       صفحات شغلی
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown242">
-                        <li class="drop-menu-item">
-                          <a href="search-grid.html">
-                          شغل گرید
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="search-list-1.html">
-                            شغل لیست
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="jobdetails.html">
-                        جزییات شغل
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown21" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        دشبرد
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown21">
-                        <li class="drop-menu-item">
-                          <a href="dashboard-main.html">
-                            صفحه اصلی دشبرد
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="dashboard-settings.html">
-                            تنظیمات
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="dashboard-posted-applicants.html">
-                            متقاضیان
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="dashboard-posted-jobs.html">
-                          شغل‌های پست شده
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown25g" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        صفحات کارجو
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown25g">
-                        <li class="drop-menu-item">
-                          <a href="candidate-profile-main.html">
-                            پروفایل کارجو
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="candidate-profile.html">
-                            پروفایل کارجو 02
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown242" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        صفحات جستجو
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown242">
-                        <li class="drop-menu-item">
-                          <a href="search-grid.html">
-                            جستجو گرید
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="search-list-1.html">
-                            جستجو لیست 01
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="search-list-2.html">
-                            جستجو لیست 02
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="drop-menu-item">
-                      <a href="company-profile.html">
-                       پروفایل شرکت
-                      </a>
-                    </li>
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown242" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      اکانت
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown242">
-                        <li class="drop-menu-item">
-                          <a href="javacript:" data-toggle="modal" data-target="#login">
-                           ورود
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="javacript:" data-toggle="modal" data-target="#signup">
-                          ثبت نام
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="drop-menu-item dropdown">
-                      <a class="dropdown-toggle gr-toggle-arrow" id="navbarDropdown26" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        صفحات پایه
-                        <i class="icon icon-small-down"></i>
-                      </a>
-                      <ul class="gr-menu-dropdown dropdown-menu dropdown-left" aria-labelledby="navbarDropdown26">
-                        <li class="drop-menu-item">
-                          <a href="faq.html">
-                            پرسش و پاسخ
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="error-404.html">
-                            404
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="pricing-page.html">
-                          صفحه قیمت گذاری
-                          </a>
-                        </li>
-                        <li class="drop-menu-item">
-                          <a href="contact.html">ارتباط با ما</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">پشتیبانی</a>
-                </li>
-              </ul>
-            </div>
-            <button class="d-block d-lg-none offcanvas-btn-close focus-reset" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="true" aria-label="Toggle navigation">
-              <i class="gr-cross-icon"></i>
-            </button>
-          </div>
-          <div class="header-btns header-btn-devider ml-auto pr-2 ml-lg-6 d-none d-xs-flex">
-            <a class="btn btn-transparent text-uppercase font-size-3 heading-default-color focus-reset" href="javacript:" data-toggle="modal" data-target="#login">
-             ورود
-            </a>
-            <a class="btn btn-primary text-uppercase font-size-3" href="javacript:" data-toggle="modal" data-target="#signup">
-            ثبت نام
-            </a>
-          </div>
-          <!-- Mobile Menu Hamburger-->
-          <button class="navbar-toggler btn-close-off-canvas  hamburger-icon border-0" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
-            <!-- <i class="icon icon-simple-remove icon-close"></i> -->
-            <span class="hamburger hamburger--squeeze js-hamburger">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-            </span>
-            </span>
-          </button>
-          <!--/.Mobile Menu Hamburger Ends-->
-        </nav>
-      </div>
-    </header>
-    <!-- navbar- -->
-    <!-- Login Modal -->
-    <div class="modal fade form-modal" id="login" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog max-width-px-840 position-relative">
-        <button type="button" class="circle-32 btn-reset bg-white pos-abs-tr mt-md-n6 mr-lg-n6 focus-reset z-index-supper" data-dismiss="modal"><i class="fas fa-times"></i></button>
-        <div class="login-modal-main bg-white rounded-8 overflow-hidden">
-          <div class="row no-gutters">
-            <div class="col-lg-5 col-md-6">
-              <div class="pt-10 pb-6 pl-11 pr-12 bg-black-2 h-100 d-flex flex-column dark-mode-texts">
-                <div class="pb-9">
-                  <h3 class="font-size-8 text-white line-height-reset pb-4 line-height-1p4">
-                    خوش آمدید
-                  </h3>
-                  <p class="mb-0 font-size-4 text-white">برای ادامه حساب خود وارد شوید
-                     و مشاغل جدید را کشف کنید.</p>
-                </div>
-                <div class="border-top border-default-color-2 mt-auto">
-                  <div class="d-flex mx-n9 pt-6 flex-xs-row flex-column">
-                    <div class="pt-5 px-9">
-                      <h3 class="font-size-7 text-white">
-                        295
-                      </h3>
-                      <p class="font-size-3 text-white gr-opacity-5 line-height-1p4">مشاغل جدید
-                         امروز ارسال شده</p>
-                    </div>
-                    <div class="pt-5 px-9">
-                      <h3 class="font-size-7 text-white">
-                        14
-                      </h3>
-                      <p class="font-size-3 text-white gr-opacity-5 line-height-1p4">شرکت های جدید
-                         ثبت شده</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7 col-md-6">
-              <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
-                <div class="row">
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-allports h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-linkedin pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">با لینکدین وارد شوید</span></a>
-                  </div>
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">با گوگل وارد شوید</span></a>
-                  </div>
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-marino h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-facebook-square pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block">با فیسبوک وارد شوید</span></a>
-                  </div>
-                </div>
-                <div class="or-devider">
-                  <span class="font-size-3 line-height-reset "> یا </span>
-                </div>
-                <form action="https://uxtheme.net/">
-                  <div class="form-group">
-                    <label for="email" class="font-size-4 text-black-2 font-weight-semibold line-height-reset"> ایمیل </label>
-                    <input type="email" class="form-control" placeholder="example@gmail.com" id="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="password" class="font-size-4 text-black-2 font-weight-semibold line-height-reset"> رمزعبور </label>
-                    <div class="position-relative">
-                      <input type="password" class="form-control" id="password" placeholder="رمزعبور را وارد کنید">
-                      <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password"></a>
-                    </div>
-                  </div>
-                  <div class="form-group d-flex flex-wrap justify-content-between">
-                    <label for="terms-check" class="gr-check-input d-flex  mr-3">
-                      <input class="d-none" type="checkbox" id="terms-check">
-                      <span class="checkbox mr-5"></span>
-                      <span class="font-size-3 mb-0 line-height-reset mb-1 d-block">به خاطرسپاری رمزعبور</span>
-                    </label>
-                    <a href="#" class="font-size-3 text-dodger line-height-reset"> فراموشی رمزعبور  </a>
-                  </div>
-                  <div class="form-group mb-8">
-                    <button class="btn btn-primary btn-medium w-100 rounded-5 text-uppercase">ورود </button>
-                  </div>
-                  <p class="font-size-4 text-center heading-default-color"> اکانت ندارید؟  <a href="#" class="text-primary">یک حساب کاربری رایگان ایجاد کنید</a></p>
-                </form>
-              </div>
-            </div>
-          </div>
+<body>
+    <!-- preloader Start -->
+    <div class="jb_preloader">
+        <div class="spinner_wrap">
+            <div class="spinner"></div>
         </div>
-      </div>
     </div>
-    <!-- Sign Up Modal -->
-    <div class="modal fade form-modal" id="signup" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog max-width-px-840 position-relative">
-        <button type="button" class="circle-32 btn-reset bg-white pos-abs-tr mt-n6 mr-lg-n6 focus-reset shadow-10" data-dismiss="modal"><i class="fas fa-times"></i></button>
-        <div class="login-modal-main bg-white rounded-8 overflow-hidden">
-          <div class="row no-gutters">
-            <div class="col-lg-5 col-md-6">
-              <div class="pt-10 pb-6 pl-11 pr-12 bg-black-2 h-100 d-flex flex-column dark-mode-texts">
-                <div class="pb-9">
-                  <h3 class="font-size-8 text-white line-height-reset pb-4 line-height-1p4">
-                   امروز یک حساب کاربری رایگان ایجاد کنید
-                  </h3>
-                  <p class="mb-0 font-size-4 text-white">حساب خود را برای ادامه ایجاد کنید
-                     و مشاغل جدید را کشف کنید.</p>
-                </div>
-                <div class="border-top border-default-color-2 mt-auto">
-                  <div class="d-flex mx-n9 pt-6 flex-xs-row flex-column">
-                    <div class="pt-5 px-9">
-                      <h3 class="font-size-7 text-white">
-                        295
-                      </h3>
-                      <p class="font-size-3 text-white gr-opacity-5 line-height-1p4">مشاغل جدید
-                         امروز ارسال شده</p>
-                    </div>
-                    <div class="pt-5 px-9">
-                      <h3 class="font-size-7 text-white">
-                        14
-                      </h3>
-                      <p class="font-size-3 text-white gr-opacity-5 line-height-1p4">شرکت های جدید
-                         ثبت شده</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7 col-md-6">
-              <div class="bg-white-2 h-100 px-11 pt-11 pb-7">
-                <div class="row">
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-allports h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-linkedin pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block"> وارد کردن از لینکدین </span></a>
-                  </div>
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-poppy h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-google pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block"> وارد کردن از گوگل </span></a>
-                  </div>
-                  <div class="col-4 col-xs-12">
-                    <a href="#" class="font-size-4 font-weight-semibold position-relative text-white bg-marino h-px-48 flex-all-center w-100 px-6 rounded-5 mb-4"><i class="fab fa-facebook-square pos-xs-abs-cl font-size-7 ml-xs-4"></i> <span class="d-none d-xs-block"> وارد کردن از فیسبوک </span></a>
-                  </div>
-                </div>
-                <div class="or-devider">
-                  <span class="font-size-3 line-height-reset"> یا </span>
-                </div>
-                <form action="https://uxtheme.net/">
-                  <div class="form-group">
-                    <label for="email2" class="font-size-4 text-black-2 font-weight-semibold line-height-reset"> ایمیل </label>
-                    <input type="email" class="form-control" placeholder="example@gmail.com" id="email2">
-                  </div>
-                  <div class="form-group">
-                    <label for="password2" class="font-size-4 text-black-2 font-weight-semibold line-height-reset"> رمزعبور </label>
-                    <div class="position-relative">
-                      <input type="password" class="form-control" id="password2" placeholder="رمزعبور را وارد کنید">
-                      <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password2"></a>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="password23" class="font-size-4 text-black-2 font-weight-semibold line-height-reset"> تایید رمزعبور </label>
-                    <div class="position-relative">
-                      <input type="password" class="form-control" id="password23" placeholder="رمزعبور را وارد کنید">
-                      <a href="#" class="show-password pos-abs-cr fas mr-6 text-black-2" data-show-pass="password23"></a>
-                    </div>
-                  </div>
-                  <div class="form-group d-flex flex-wrap justify-content-between mb-1">
-                    <label for="terms-check2" class="gr-check-input d-flex  mr-3">
-                      <input class="d-none" type="checkbox" id="terms-check2">
-                      <span class="checkbox mr-5"></span>
-                      <span class="font-size-3 mb-0 line-height-reset d-block"> موافقت با  <a href="#" class="text-primary"> قوانین و مقررات  </a></span>
-                    </label>
-                    <a href="#" class="font-size-3 text-dodger line-height-reset"> فراموشی رمزعبور  </a>
-                  </div>
-                  <div class="form-group mb-8">
-                    <button class="btn btn-primary btn-medium w-100 rounded-5 text-uppercase">ثبت نام </button>
-                  </div>
-                  <p class="font-size-4 text-center heading-default-color"> اکانت ندارید؟  <a href="#" class="text-primary">یک حساب کاربری رایگان ایجاد کنید</a></p>
+    <div class="cursor"></div>
+    <!-- Top Scroll Start --><a href="javascript:" id="return-to-top"><i class="fas fa-angle-double-up"></i></a>
+    <!-- Top Scroll End -->
+    <!-- cp navi wrapper Start -->
+    <nav class="cd-dropdown  d-block d-sm-block d-md-block d-lg-none d-xl-none">
+        <h2><a href="index.html"> <span><img src="images/logo.png" alt="img"></span></a></h2>
+        <a href="#0" class="cd-close">بستن</a>
+        <ul class="cd-dropdown-content">
+            <li>
+                <form class="cd-search">
+                    <input type="search" placeholder="جستجو...">
                 </form>
-              </div>
+            </li>
+            <li class="has-children">
+                <a href="#">خانه</a>
+                <ul class="cd-secondary-dropdown icon_menu is-hidden">
+                    <li class="go-back"><a href="#0">منو</a></li>
+                    <li><a href="index.html">خانه 1</a></li>
+                    <li><a href="index_II.html">خانه 2</a></li>
+                    <li><a href="index_III.html">خانه 3</a></li>
+                </ul>
+            </li>
+            <li class="has-children">
+                <a href="#">مشاغل</a>
+                <ul class="cd-secondary-dropdown icon_menu is-hidden">
+                    <li class="go-back"><a href="#0">منو</a></li>
+                    <li><a href="job_listing_grid_left_filter.html">آگهی شغلی گرید </a></li>
+                    <li><a href="job_listing_list_left_filter.html">آگهی شغلی لیست</a></li>
+                    <li><a href="job_single.html">شغل تنها</a></li>
+                </ul>
+            </li>
+            <!-- .has-children -->
+            <li class="has-children">
+                <a href="#">صفحات</a>
+                <ul class="cd-secondary-dropdown icon_menu is-hidden">
+                    <li class="go-back"><a href="#0">منو</a></li>
+                    <li><a href="about_us.html">درباره ما</a></li>
+                    <li><a href="companies.html">شرکت ها</a></li>
+                    <li><a href="company_single.html">شرکت تنها</a></li>
+                    <li><a href="error_page.html">صفحه ارور</a></li>
+                    <li><a href="login.html">ورود</a></li>
+                    <li><a href="pricing_table.html">جدول قیمت گذاری</a></li>
+                    <li><a href="sign_up.html">ثبت نام</a></li>
+                </ul>
+            </li>
+            <li class="has-children">
+                <a href="#">داشبورد</a>
+                <ul class="cd-secondary-dropdown is-hidden">
+                    <li class="go-back"><a href="#0">منو</a>
+                    </li>
+                    <li class="has-children"> <a href="#">داوطلب</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                            <li class="go-back"><a href="#0">منو</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/candidate_applied_job.html">شغل تاییده شده </a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/candidate_dashboard.html">داشبورد</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/candidate_edit_profile.html"> ویرایش پروفایل</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/candidate_favourite_job.html">شغل موردعلاقه</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/candidate_resume.html"> رزومه</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/message.html"> پیام</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/pricing_plans.html">برنامه های قیمت گذاری</a>
+                            </li>
+                        </ul>
+                        <!-- .cd-secondary-dropdown -->
+                    </li>
+                    <!-- .has-children -->
+                    <li class="has-children"> <a href="#">شرکت</a>
+                        <ul class="cd-secondary-dropdown is-hidden">
+                            <li class="go-back"><a href="#0">منو</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_applications.html"> برنامه ها </a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_company_page.html">صفحه شرکت</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_employer_dashboard.html"> داشبورد</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_employer_edit_profile.html">ویرایش پروفایل</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_employer_manage_jobs.html"> مدیریت مشاغل</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/comp_post_new_job.html"> ارسال شغل جدید</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/message.html">پیام</a>
+                            </li>
+                            <li>
+                                <a href="../dashboard/pricing_plans.html">برنامه های قیمت گذاری</a>
+                            </li>
+                        </ul>
+                        <!-- .cd-secondary-dropdown -->
+                    </li>
+                </ul>
+                <!-- .cd-secondary-dropdown -->
+            </li>
+            <li class="has-children">
+                <a href="#">وبلاگ</a>
+                <ul class="cd-secondary-dropdown icon_menu is-hidden">
+                    <li class="go-back"><a href="#0">منو</a></li>
+                    <li><a href="blog_single.html">وبلاگ تنها</a></li>
+                    <li><a href="blog_category_right_sidebar.html">دسته بندی وبلاگ</a></li>
+                </ul>
+            </li>
+            <li><a href="contact_us.html">تماس با ما </a></li>
+            <li><a href="login.html">ورود</a></li>
+        </ul>
+        <!-- .cd-dropdown-content -->
+    </nav>
+    <div class="cp_navi_main_wrapper jb_cover">
+        <div class="container-fluid">
+            <div class="cp_logo_wrapper">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="logo">
+                </a>
             </div>
-          </div>
+            <!-- mobile menu area start -->
+            <header class="mobail_menu d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="cd-dropdown-wrapper">
+                                <a class="house_toggle" href="#0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.177 31.177" style="enable-background:new 0 0 31.177 31.177;" xml:space="preserve" width="25px" height="25px">
+                                        <g>
+                                            <g>
+                                                <path class="menubar" d="M30.23,1.775H0.946c-0.489,0-0.887-0.398-0.887-0.888S0.457,0,0.946,0H30.23    c0.49,0,0.888,0.398,0.888,0.888S30.72,1.775,30.23,1.775z" fill="#004165" />
+                                            </g>
+                                            <g>
+                                                <path class="menubar" d="M30.23,9.126H12.069c-0.49,0-0.888-0.398-0.888-0.888c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,8.729,30.72,9.126,30.23,9.126z" fill="#004165" />
+                                            </g>
+                                            <g>
+                                                <path class="menubar" d="M30.23,16.477H0.946c-0.489,0-0.887-0.398-0.887-0.888c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,16.079,30.72,16.477,30.23,16.477z" fill="#004165" />
+                                            </g>
+                                            <g>
+                                                <path class="menubar" d="M30.23,23.826H12.069c-0.49,0-0.888-0.396-0.888-0.887c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,23.43,30.72,23.826,30.23,23.826z" fill="#004165" />
+                                            </g>
+                                            <g>
+                                                <path class="menubar" d="M30.23,31.177H0.946c-0.489,0-0.887-0.396-0.887-0.887c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.398,0.888,0.888C31.118,30.78,30.72,31.177,30.23,31.177z" fill="#004165" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <!-- .cd-dropdown -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .cd-dropdown-wrapper -->
+            </header>
+            <div class="menu_btn_box header_btn jb_cover">
+                <ul>
+                    <li>
+                        <a href="sign_up.html"><i class="flaticon-man-user"></i> ثبت نام</a>
+                    </li>
+                    <li>
+                        <a href="login.html"> <i class="flaticon-login"></i> ورود</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="jb_navigation_wrapper">
+                <div class="mainmenu d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                    <ul class="main_nav_ul">
+                        <li class="has-mega gc_main_navigation"><a href="#" class="gc_main_navigation active_class">خانه</a>
+                            <ul class="navi_2_dropdown">
+                                <li class="parent">
+                                    <a href="index.html"><i class="fas fa-square"></i>خانه 1 </a>
+                                </li>
+                                <li class="parent">
+                                    <a href="index_II.html"><i class="fas fa-square"></i>خانه 2</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="index_III.html"><i class="fas fa-square"></i> خانه 3</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega gc_main_navigation"><a href="#" class="gc_main_navigation">مشاغل</a>
+                            <ul class="navi_2_dropdown">
+                                <li class="parent">
+                                    <a href="job_listing_grid_left_filter.html"> <i class="fas fa-square"></i>آگهی شغلی گرید </a>
+                                </li>
+                                <li class="parent">
+                                    <a href="job_listing_list_left_filter.html"> <i class="fas fa-square"></i>آگهی شغلی لیست </a>
+                                </li>
+                                <li class="parent">
+                                    <a href="job_single.html"> <i class="fas fa-square"></i>شغل تنها</a>
+                                </li>
+
+                                <li class="parent">
+                                    <a href="#"><i class="fas fa-square"></i>مشاغل<span><i class="fas fa-chevron-right"></i>
+									</span></a>
+                                    <ul class="dropdown-menu-right">
+                                        <li>
+                                            <a href="job_listing_grid_left_filter.html"> <i class="fas fa-square"></i>آگهی شغلی گرید </a>
+                                        </li>
+                                        <li>
+                                            <a href="job_listing_list_left_filter.html"> <i class="fas fa-square"></i>آگهی شغلی لیست </a>
+                                        </li>
+                                        <li>
+                                            <a href="job_single.html"> <i class="fas fa-square"></i>شغل تنها</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega gc_main_navigation kv_sub_menu">
+                            <a href="#" class="gc_main_navigation">  داوطلبین</a>
+                            <!-- mega menu start -->
+                            <ul class="kv_mega_menu">
+
+                                <li class="kv_mega_menu_width">
+                                    <div class="container">
+
+                                        <div class="jn_menu_partion_div">
+
+                                            <div class="candidate_width">
+                                                <div class="jen_tabs_conent_list jb_cover">
+                                                    <h1>مهارت های شغلی</h1>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>HTML5 & CSS3</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>وردپرس</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>جاوااسکریپت</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>فتوشاپ</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>طراح</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>ساخت و ساز</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="candidate_width">
+                                                <div class="jen_tabs_conent_list jb_cover">
+                                                    <h1>دسته بندی ها</h1>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>طراحی گرافیک</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>مشاغل مهندسی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>مشاغل اصلی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>مشاغل پر کاربرد</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>مشاغل دولتی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>شرکت فناوری اطلاعات</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="candidate_width">
+                                                <div class="jen_tabs_conent_list   jb_cover">
+                                                    <h1>موقعیت شغل</h1>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>هند</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>امریکا</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>ژاپن</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>دبی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>افریقای جنوبی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#"><i class="fas fa-square"></i>چین</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="candidate_width">
+                                                <div class="jen_tabs_conent_list   jb_cover">
+                                                    <h1>مشاغل باز</h1>
+                                                    <div class="open_jobs_wrapper">
+                                                        <div class="open_jobs_wrapper_1 jb_cover">
+                                                            <img src="images/job1.jpg" alt="img">
+                                                            <div class="open_job_text">
+                                                                <h3><a href="#">برخی از طراحان آن را تحمل کردند</a></h3>
+                                                                <p>5 ساعت پیش</p>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="open_jobs_wrapper_1 jb_cover">
+                                                            <img src="images/job1.jpg" alt="img">
+                                                            <div class="open_job_text">
+                                                                <h3><a href="#">برخی از طراحان آن را تحمل کردند</a></h3>
+                                                                <p>12 ساعت پیش</p>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="view_all_job jb_cover"><a href="#">مشاهده همه مشاغل</a></div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega gc_main_navigation"><a href="#" class="gc_main_navigation">صفحات</a>
+                            <ul class="navi_2_dropdown">
+                                <li class="parent">
+                                    <a href="about_us.html"> <i class="fas fa-square"></i>درباره ما</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="companies.html"> <i class="fas fa-square"></i>شرکت ها</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="company_single.html"> <i class="fas fa-square"></i>شرکت تنها</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="error_page.html"><i class="fas fa-square"></i>صفحه ارور</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="login.html"><i class="fas fa-square"></i>ورود</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="pricing_table.html"><i class="fas fa-square"></i>جدول قیمت گذاری</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="sign_up.html"><i class="fas fa-square"></i>ثبت نام</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega gc_main_navigation"><a href="#" class="gc_main_navigation">داشبورد</a>
+                            <ul class="navi_2_dropdown">
+                                <li class="parent">
+                                    <a href="#"><i class="fas fa-square"></i>داوطلب<span><i class="fas fa-chevron-right"></i>
+									</span></a>
+                                    <ul class="dropdown-menu-right">
+                                        <li>
+                                            <a href="../dashboard/candidate_applied_job.html"> <i class="fas fa-square"></i>شغل تاییده شده </a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/candidate_dashboard.html"> <i class="fas fa-square"></i> داشبورد</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/candidate_edit_profile.html"> <i class="fas fa-square"></i>ویرایش پروفایل</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/candidate_favourite_job.html"> <i class="fas fa-square"></i>شغل موردعلاقه</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/candidate_resume.html"> <i class="fas fa-square"></i>رزومه</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/message.html"> <i class="fas fa-square"></i>پیام</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/pricing_plans.html"> <i class="fas fa-square"></i>برنامه های قیمت گذاری</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="parent">
+                                    <a href="#"><i class="fas fa-square"></i>شرکت<span><i class="fas fa-chevron-right"></i>
+									</span></a>
+                                    <ul class="dropdown-menu-right">
+                                        <li>
+                                            <a href="../dashboard/comp_applications.html"> <i class="fas fa-square"></i>برنامه ها </a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/comp_company_page.html"> <i class="fas fa-square"></i> صفحه شرکت</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/comp_employer_dashboard.html"> <i class="fas fa-square"></i>داشبورد</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/comp_employer_edit_profile.html"> <i class="fas fa-square"></i>ویرایش پروفایل</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/comp_employer_manage_jobs.html"> <i class="fas fa-square"></i>مدیریت مشاغل</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/comp_post_new_job.html"> <i class="fas fa-square"></i>ارسال شغل جدید</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/message.html"> <i class="fas fa-square"></i>پیام</a>
+                                        </li>
+                                        <li>
+                                            <a href="../dashboard/pricing_plans.html"> <i class="fas fa-square"></i>برنامه های قیمت گذاری</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega gc_main_navigation"><a href="#" class="gc_main_navigation">وبلاگ</a>
+                            <ul class="navi_2_dropdown">
+                                <li class="parent">
+                                    <a href="blog_single.html"> <i class="fas fa-square"></i>وبلاگ تنها</a>
+                                </li>
+                                <li class="parent">
+                                    <a href="blog_category_right_sidebar.html"> <i class="fas fa-square"></i>دسته بندی وبلاگ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="contact_us.html" class="gc_main_navigation">تماس</a></li>
+
+                    </ul>
+                </div>
+                <!-- mainmenu end -->
+                <div class="jb_search_btn_wrapper d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                    <!-- extra nav -->
+                    <div class="extra-nav">
+                        <div class="extra-cell">
+                            <button id="quik-search-btn" type="button" class="site-button radius-xl"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Quik search -->
+                    <div class="dez-quik-search bg-primary-dark">
+                        <form action="#">
+                            <input name="search" value="" type="text" class="form-control" placeholder="برای جستجو تایپ کنید ...">
+                            <span id="quik-search-remove"><i class="fas fa-times"></i></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <!-- Header start end -->
-    <!-- Hero Area -->
-    <div class="bg-gradient-1 pt-26 pt-md-32 pt-lg-33 pt-xl-35 position-relative z-index-1 overflow-hidden">
+{% block content %}
 
 
+{% endblock  %}
+    <!-- footer Wrapper Start -->
+    <div class="footer jb_cover">
 
-        {% block content %}
-
-        {% endblock %}
-
-    <footer class="footer bg-ebony-clay dark-mode-texts">
-      <div class="container">
-        <!-- Cta section -->
-        <div class="pt-11 pt-lg-20 pb-13 pb-lg-20 border-bottom border-width-1 border-default-color-2">
-          <div class="row justify-content-center ">
-            <div class="col-xl-7 col-lg-12 aos-init aos-animate" data-aos="fade-right" data-aos-duration="800" data-aos-once="true">
-              <!-- cta-content start -->
-              <div class="pb-xl-0 pb-9 text-xl-left text-center">
-                <h2 class="text-white font-size-8 mb-4">جامع ترین پورتال شغلی</h2>
-                <p class="text-hit-gray font-size-5 mb-0">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از و از طراحان گرافیک است.</p>
-              </div>
-              <!-- cta-content end -->
-            </div>
-            <div class="col-xl-5 col-lg-12 aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" data-aos-once="true">
-              <!-- cta-btns start -->
-              <div class="btns d-flex justify-content-xl-end justify-content-center align-items-xl-center flex-wrap h-100  mx-n4">
-                <a class="btn btn-outline-gallery btn-xl mx-4 mt-6 text-uppercase" href="#" data-toggle="modal" data-target="#login">ورود</a>
-                <a class="btn btn-green btn-h-60 btn-xl mx-4 mt-6 text-uppercase" href="#" data-toggle="modal" data-target="#signup">ثبت‌نام</a>
-              </div>
-              <!-- cta-btns end -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container  pt-12 pt-lg-19 pb-10 pb-lg-19">
-        <div class="row">
-          <div class="col-lg-4 col-sm-6 mb-lg-0 mb-9">
-            <!-- footer logo start -->
-            <img src="image/logo-main-white.png" alt="" class="footer-logo mb-14">
-            <!-- footer logo End -->
-            <!-- media start -->
-            <div class="media mb-11">
-              <img src="image/l1/png/message.png" class="align-self-center mr-3" alt="">
-              <div class="media-body pl-5">
-                <p class="mb-0 font-size-4 text-white">ارتباط با ما</p>
-                <a class="mb-0 font-size-4 font-weight-bold" href="mailto:support@uxtheme.net">support@uxtheme.net</a>
-              </div>
-            </div>
-            <!-- media start -->
-            <!-- widget social icon start -->
-            <div class="social-icons">
-              <ul class="pl-0 list-unstyled d-flex align-items-end ">
-                <li class="d-flex flex-column justify-content-center px-3 mr-3 font-size-4 heading-default-color"> ما را دنبال کنید در:</li>
-                <li class="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" class="hover-color-primary heading-default-color"><i class="fab fa-facebook-f font-size-3 pt-2"></i></a></li>
-                <li class="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" class="hover-color-primary heading-default-color"><i class="fab fa-twitter font-size-3 pt-2"></i></a></li>
-                <li class="d-flex flex-column justify-content-center px-3 mr-3"><a href="#" class="hover-color-primary heading-default-color"><i class="fab fa-linkedin-in font-size-3 pt-2"></i></a></li>
-              </ul>
-            </div>
-            <!-- widget social icon end -->
-
-          </div>
-          <div class="col-lg-8 col-md-6">
+        <div class="container">
             <div class="row">
-              <div class="col-lg-3 col-md-6 col-sm-3 col-xs-6">
-                <div class="footer-widget widget2 mb-md-0 mb-13">
-                  <!-- footer widget title start -->
-                  <p class="widget-title font-size-4 text-gray mb-md-8 mb-7">شرکت</p>
-                  <!-- footer widget title end -->
-                  <!-- widget social menu start -->
-                  <ul class="widget-links pl-0 list-unstyled list-hover-primary">
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">درباره ما</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">تماس با ما</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">مشاغل </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">پرس</a></li>
-                  </ul>
-                  <!-- widget social menu end -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover">
+                        <a href="#"><img src="images/logo2.png" alt="img"></a>
+                        <ul class="footer_first_contact">
+                            <li><i class="flaticon-location-pointer"></i>
+                                <p>123 خیابان شهری، طبقه 10،
+                                    <br> تهران، ایران.
+                                </p>
+                            </li>
+                            <li><i class="flaticon-telephone"></i>
+                                <p>1 -234 -456 -7890
+                                    <br> 1 -234 -456 -7890</p>
+                            </li>
+                            <li><i class="flaticon-envelope"></i><a href="#">info@Jbdesks.com </a>
+                                <br>
+                                <a href="#">support@Jbdesks.com</a>
+                            </li>
+
+                        </ul>
+
+                        <ul class="icon_list_news jb_cover">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter"></i>
+                                    </a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+
+                        </ul>
+                    </div>
                 </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-3 col-xs-6">
-                <div class="footer-widget widget3 mb-sm-0 mb-13">
-                  <!-- footer widget title start -->
-                  <p class="widget-title font-size-4 text-gray mb-md-8 mb-7">محصولات</p>
-                  <!-- footer widget title end -->
-                  <!-- widget social menu start -->
-                  <ul class="widget-links pl-0 list-unstyled list-hover-primary">
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">جدیدترین</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">قیمت گذاری</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">اخبار</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">میز راهنما</a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#">پشتیبانی</a></li>
-                  </ul>
-                  <!-- widget social menu end -->
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav jb_cover footer_border_displ">
+                        <h5>ویژگی ها</h5>
+                        <ul class="nav-widget">
+                            <li><a href="#"><i class="fa fa-square"></i>مدیریت کار و صورتحساب
+</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i>پیگیری زمان و مواد
+</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i>پیروی از استانداردها
+</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i>ردیابی GPS در زمان واقعی
+</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i>پورتال مشتری
+</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i> گردش کار قدرتمند</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav float_left footer_border_displ">
+                        <h5>مرور</h5>
+                        <ul class="nav-widget">
+
+                            <li><a href="#"><i class="fa fa-square"></i>مترجمان آزاد بر اساس دسته</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i> مترجمان آزاد در آمریکا </a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i> مترجمان آزاد در انگلیس</a></li>
+
+                            <li><a href="#"><i class="fa fa-square"></i> مترجمان آزاد در کانادا</a></li>
+                            <li><a href="#"><i class="fa fa-square"></i> مترجمان آزاد در هند</a></li>
+                            <li><a href="#"><i class="fa fa-square"></i> پیدا کردن شغل</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12">
+                    <div class="footerNav float_left footer_border_displ">
+                        <h5>برنامه و ادغام</h5>
+                        <ul class="nav-widget">
+                            <li>
+                                <a href="#"><img src="images/ft1.png" alt="img">Xero
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"><img src="images/ft2.png" alt="img">Reckon
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#"><img src="images/ft3.png" alt="img">Flexidocs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/ft4.png" alt="img">Microsoft Exchange</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/ft5.png" alt="img"> Mailchimp
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="images/ft6.png" alt="img"> MYOB
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright_left"><i class="fa fa-copyright"></i> 2019 <a href="#">  جاب دسک.  </a> همه حقوق محفوظ است.
                 </div>
 
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-3 col-xs-6">
-                <div class="footer-widget widget4 mb-sm-0 mb-13">
-                  <!-- footer widget title start -->
-                  <p class="widget-title font-size-4 text-gray mb-md-8 mb-7">خدمات</p>
-                  <!-- footer widget title end -->
-                  <!-- widget social menu start -->
-                  <ul class="widget-links pl-0 list-unstyled list-hover-primary">
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> بازاریابی دیجیتال </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> سئو برای تجارت </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> کشف داش </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> رابط کاربری </a></li>
-                  </ul>
-                  <!-- widget social menu end -->
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-3 col-xs-6">
-                <div class="footer-widget widget4">
-                  <!-- footer widget title start -->
-                  <p class="widget-title font-size-4 text-gray mb-md-8 mb-7">حقوقی</p>
-                  <!-- footer widget title end -->
-                  <ul class="widget-links pl-0 list-unstyled list-hover-primary">
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> سیاست حفظ حریم خصوصی </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> قوانین و مقررات  </a></li>
-                    <li class="mb-6"><a class="heading-default-color font-size-4 font-weight-normal" href="#"> خط مشی برگشت </a></li>
-                  </ul>
-                </div>
-              </div>
+                <div class="clearfix"></div>
             </div>
-          </div>
+            <!--/.row-->
         </div>
-      </div>
-    </footer>
+        <!--/.container-->
+        <div class="waveWrapper waveAnimation">
+            <div class="waveWrapperInner bgTop gradient-color">
+                <div class="wave waveTop"></div>
+            </div>
+            <div class="waveWrapperInner bgMiddle">
+                <div class="wave waveMiddle"></div>
+            </div>
+            <div class="waveWrapperInner bgBottom">
+                <div class="wave waveBottom"></div>
+            </div>
+        </div>
+
     </div>
-    <!-- footer area function end -->
-  </div>
-  <!-- Vendor Scripts -->
-  <script src="{% static 'js/vendor.min.js'%}"></script>
-  <!-- Plugin's Scripts -->
-  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js'%}"></script>
-  <script src="{% static 'plugins/nice-select/jquery.nice-select.min.js'%}"></script>
-  <script src="{% static 'plugins/aos/aos.min.js'%}"></script>
-  <script src="{% static 'plugins/slick/slick.min.js'%}"></script>
-  <script src="{% static 'plugins/counter-up/jquery.counterup.min.js'%}"></script>
-  <script src="{% static 'plugins/counter-up/jquery.waypoints.min.js'%}"></script>
-  <script src="{% static 'plugins/ui-range-slider/jquery-ui.js'%}"></script>
-  <!-- Activation Script -->
-  <!-- <script src="js/drag-n-drop.js"></script> -->
-  <script src="{% static 'js/custom.js'%}"></script>
 
+    <!-- footer Wrapper End -->
+    <!-- chat box Wrapper start -->
+    <div id="chat-circle" class="btn btn-raised">
+        <i class="fas fa-comment-alt"></i>
+    </div>
+    <div class="chat-box">
+        <div class="chat-box-header">
+           باکس چت
+            <span class="chat-box-toggle"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="chat-box-body">
+            <div class="chat-box-overlay">
+            </div>
+            <div class="chat-logs">
 
-</body></html>
+            </div>
+            <!--chat-log -->
+        </div>
+        <div class="chat-input">
+            <form>
+                <input type="text" id="chat-input" placeholder="ارسال یک پیام..." />
+                <button type="submit" class="chat-submit" id="chat-submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <!-- chat box Wrapper end -->
+    <!--custom js files-->
+    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/modernizr.js'%}"></script>
+    <script src="{% static 'js/jquery.menu-aim.js'%}"></script>
+    <script src="{% static 'js/plugin.js'%}"></script>
+    <script src="{% static 'js/owl.carousel.js'%}"></script>
+    <script src="{% static 'js/jquery-ui.js'%}"></script>
+    <script src="{% static 'js/jquery.countTo.js'%}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js'%}"></script>
+    <script src="{% static 'js/dropify.min.js'%}"></script>
+    <script src="{% static 'js/jquery.inview.min.js'%}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+    <!-- custom js-->
+</body>
+
+</html>
