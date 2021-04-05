@@ -42,12 +42,25 @@ from .models import User
 class EmployeeRegister(CreateView):
     model = User
     form_class = SignupForm
-    template_name = "registration/signup.html"
+    template_name = "registration/signup_employee.html"
     success_url = reverse_lazy('index')
 
     def form_valid(self, form):
         self.obj = form.save(commit=False)
         self.obj.Employee = True
+        form.save()
+        return super().form_valid(form)
+
+
+class EmployerRegister(CreateView):
+    model = User
+    form_class = SignupForm
+    template_name = "registration/signup.html"
+    success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+        self.obj = form.save(commit=False)
+        self.obj.employer = True
         form.save()
         return super().form_valid(form)
 

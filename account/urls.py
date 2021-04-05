@@ -1,10 +1,11 @@
 from django.contrib.auth import views
 from django.urls import path, include
 
-from .views import EmployeeRegister
+from .views import EmployeeRegister,EmployerRegister
 
 urlpatterns = [
     path('employee/register', EmployeeRegister.as_view(),name="employee-register"),
+    path('employer/register', EmployerRegister.as_view(),name="employer -register"),
     path('login',views.LoginView.as_view(),name='login'),
     # path('logout/', views.LogoutView.as_view(),name='logout'),
     # path('dashboard', Dashboard.as_view(),name='home'),

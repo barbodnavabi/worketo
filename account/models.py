@@ -5,7 +5,7 @@ from django.utils import timezone
 class User(AbstractUser):
     email = models.EmailField(max_length=200,unique=True,verbose_name='ایمیل')
                              
-    phone = models.CharField(max_length=12, unique=True, verbose_name='تلفن')
+    phone = models.CharField(max_length=12, blank=True,null=True, verbose_name='تلفن')
     Employee = models.BooleanField(default=False, verbose_name='آیا کارجو هستید؟')
     employer = models.BooleanField(default=False, verbose_name='آیا کارفرما هستید؟')
     avatar=models.ImageField(upload_to='avatars',verbose_name='تصویر شما',null=True,blank=True)
