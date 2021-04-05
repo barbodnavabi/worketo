@@ -136,7 +136,7 @@ class Jobs(models.Model):
 
 class massage(models.Model):
     name=models.CharField(max_length=300,verbose_name='نام')
-    pdf=models.FileField(upload_to='pdf',blank=True,null=True)
+    pdf=models.FileField(upload_to='pdf',verbose_name='فایل رزومه')
     phone=models.CharField(max_length=300,verbose_name='تلفن')
     email=models.EmailField(("ایمیل"), max_length=254,blank=True,null=True)
     revicer=models.ForeignKey(User, verbose_name=('دریافت کننده'), on_delete=models.CASCADE)

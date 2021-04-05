@@ -36,7 +36,6 @@
                         </div>
                         <div class="job_overview_header jb_cover">
                             <div class="jb_job_overview_img">
-                                <img src="images/overview.png" alt="post_img" />
                                 <h4>{{object.title}}</h4>
                                 <p>{{object.company}}</p>
                                 <ul class="job_single_lists">
@@ -56,6 +55,29 @@
                                     <ul>
                                         <li>تاریخ ارسال:</li>
                                         <li>{{object.date|to_jalali:'%y/%m/%d' }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                             <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                <div class="jp_listing_list_icon">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="jp_listing_list_icon_cont_wrapper">
+                                    <ul>
+                                        <li>وضعیت نظام وظیفه:</li>
+                                        <li>{{object.soldiering }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                             <div class="jp_listing_overview_list_main_wrapper jb_cover">
+                                <div class="jp_listing_list_icon">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="jp_listing_list_icon_cont_wrapper">
+                                    <ul>
+                                        <li>وضعیت تجربه:</li>
+                                        <li>{{object.experiance }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -110,7 +132,7 @@
                             </div>
                                      <div class="jp_listing_overview_list_main_wrapper jb_cover">
                                 <div class="jp_listing_list_icon">
-                                    <i class="fa fa-th-large"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="jp_listing_list_icon_cont_wrapper">
                                     <ul>
@@ -184,218 +206,6 @@
                                     <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
 
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="related_job_wrapper jb_cover">
-                        <h1 class="related_job">مشاغل مرتبط</h1>
-                        <div class="related_product_job jb_cover">
-
-                            <div class="owl-carousel owl-theme">
-                                <div class="item">
-
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt2.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">کارآموز طراح وب (تازه)</a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt1.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">طراح تجربه سیستم های قدرتمند </a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt5.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">کارآموز طراح وب (تازه)</a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt2.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">کارآموز طراح وب (تازه)</a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt1.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">طراح تجربه سیستم های قدرتمند </a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="job_listing_left_fullwidth jb_cover">
-                                        <div class="row">
-                                            <div class="col-lg-9 col-md-9 col-sm-12 col-12">
-                                                <div class="jp_job_post_side_img">
-                                                    <img src="images/lt5.png" alt="post_img" />
-                                                    <br> <span>گوگل</span>
-                                                </div>
-                                                <div class="jp_job_post_right_cont">
-                                                    <h4><a href="#">کارآموز طراح وب (تازه)</a></h4>
-
-                                                    <ul>
-                                                        <li><i class="flaticon-cash"></i>&nbsp; 12هزار - 15هزار تومان</li>
-                                                        <li><i class="flaticon-location-pointer"></i>&nbsp; لس آنجلس، کالیفرنیا 455001</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
-                                                <div class="jp_job_post_right_btn_wrapper">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="job_adds_right">
-                                                                <a href="#!"><i class="far fa-heart"></i></a>
-                                                            </div>
-                                                        </li>
-                                                        <li><a href="job_single.html">نیمه وقت</a></li>
-                                                        <li> <a href="#">درخواست</a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

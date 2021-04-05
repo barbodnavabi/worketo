@@ -48,12 +48,6 @@ class JobsDetailView(FormMixin,DetailView):
     template_name = 'jobs/jobDetail.html'
     form_class= MassegeForm
     
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['lastest'] = Jobs.objects.filter(status='p').order_by('-date')[:16]
-        return context
-    
 
     def get_queryset(self):
         return Jobs.objects.filter(status='p')
