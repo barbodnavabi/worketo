@@ -1,6 +1,6 @@
 {% extends 'shared/base.html' %}
 {% load crispy_forms_filters %}
-
+{% load jalali_tags %}
 {% block content %}
     <div class="page_title_section">
 
@@ -55,7 +55,7 @@
                                 <div class="jp_listing_list_icon_cont_wrapper">
                                     <ul>
                                         <li>تاریخ ارسال:</li>
-                                        <li>2 اسفند 1398</li>
+                                        <li>{{object.date|to_jalali:'%y/%m/%d' }}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -76,19 +76,8 @@
                                 </div>
                                 <div class="jp_listing_list_icon_cont_wrapper">
                                     <ul>
-                                        <li>عنوان شغلی:</li>
-                                        <li>توسعه دهنده HTML</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="jp_listing_overview_list_main_wrapper jb_cover">
-                                <div class="jp_listing_list_icon">
-                                    <i class="far fa-clock"></i>
-                                </div>
-                                <div class="jp_listing_list_icon_cont_wrapper">
-                                    <ul>
-                                        <li>ساعات:</li>
-                                        <li>40 ساعت / هفته</li>
+                                        <li>شرکت :</li>
+                                        <li>{{object.company}}</li>
                                     </ul>
                                 </div>
                             </div>

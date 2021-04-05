@@ -7,6 +7,9 @@ from jobs.models import Jobs,Cities
 from .forms import MassegeForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse
+
+
+
 class JobListView(ListView):
     model = Jobs
     template_name = 'jobs/jobs_list.html'
@@ -36,8 +39,8 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
         "Type",
         "soldiering",
         "sex",
-         'service',
-         'employer_description',]
+        'service',
+        'employer_description',]
 
 
 class JobsDetailView(FormMixin,DetailView):
