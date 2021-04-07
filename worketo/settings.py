@@ -5,6 +5,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '4d(5%pb0jhpqr$r-xu)^bb=gasm#0iytn_dn15g^ffsywso^6)'
 
+
+LOGIN_REDIRECT_URL='index'
+LOGOUT_REDIRECT_URL='login'
+LOGIN_URL = 'login'
+
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
