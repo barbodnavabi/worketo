@@ -14,27 +14,27 @@ Author: Webstrot
 
 <head>
     <meta charset="utf-8" />
-    <title>JB desks Responsive HTML Template</title>
+    <title>داشبورد</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta name="description" content="JB desks,job portal,job" />
     <meta name="keywords" content="JB desks,job portal,job" />
     <meta name="author" content="" />
     <meta name="MobileOptimized" content="320" />
     <!--Template style -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dropify.min.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui.min.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/nice-select.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/animate.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/fonts.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/flaticon.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/font-awesome.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/owl.carousel.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/owl.theme.default.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/dropify.min.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/jquery-ui.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/magnific-popup.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/nice-select.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/reset.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/responsive.css'%}" />
     <!--favicon-->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 </head>
@@ -511,6 +511,49 @@ Author: Webstrot
             </div>
         </div>
     </div>
+      <div class="candidate_dashboard_wrapper jb_cover">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="emp_dashboard_sidebar jb_cover">
+                        {% comment %} <img src="{% static 'images/profile.jpg' %}" class="img-responsive" alt="post_img" /> {% endcomment %}
+                        <div class="emp_web_profile candidate_web_profile jb_cover">
+
+                            <h4>آرش خادملو</h4>
+                            <p>@username</p>
+                            <div class="skills jb_cover">
+                                <div class="skill-item jb_cover">
+                                    <h6>پروفایل<span>70%</span></h6>
+                                    <div class="skills-progress"><span data-value="70%"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="emp_follow_link jb_cover">
+                            <ul class="feedlist">
+                                <li><a href="candidate_dashboard.html"><i class="fas fa-tachometer-alt"></i> داشبورد </a></li>
+                                <li>
+                                    <a href="candidate_edit_profile.html" class="link_active"> <i class="fas fa-edit"></i>ویرایش پروفایل
+                                    </a>
+                                </li>
+                                <li><a href="candidate_resume.html"><i class="fas fa-file"></i>رزومه </a></li>
+                                <li><a href="candidate_favourite_job.html"><i class="fas fa-heart"></i>موردعلاقه</a></li>
+                                <li><a href="candidate_applied_job.html"><i class="fas fa-check-square"></i>شغل درخواستی</a></li>
+                                <li><a href="message.html"><i class="fas fa-envelope"></i>پیام</a></li>
+
+                                <li><a href="pricing_plans.html"><i class="fas fa-tag"></i>طرح های قیمت گذاری</a></li>
+                            </ul>
+                            <ul class="feedlist logout_link jb_cover">
+                                <li><a href="#"><i class="fas fa-power-off"></i> خروج  </a></li>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i>حذف پروفایل
+                                </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
 {% block content %}
 
 
@@ -675,22 +718,22 @@ Author: Webstrot
     </div>
     <!-- chat box Wrapper end -->
     <!--custom js files-->
-    <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/modernizr.js'%}"></script>
-    <script src="{% static 'js/jquery.menu-aim.js'%}"></script>
-    <script src="{% static 'js/plugin.js'%}"></script>
-    <script src="{% static 'js/owl.carousel.js'%}"></script>
-    <script src="{% static 'js/jquery-ui.js'%}"></script>
-    <script src="{% static 'js/jquery.countTo.js'%}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.js'%}"></script>
-    <script src="{% static 'js/dropify.min.js'%}"></script>
-    <script src="{% static 'js/jquery.inview.min.js'%}"></script>
-    <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
-    <script src="{% static 'js/imagesloaded.pkgd.min.js'%}"></script>
-    <script src="{% static 'js/isotope.pkgd.min.js'%}"></script>
-    <script src="{% static 'js/custom.js'%}"></script>
-    <script src="{% static 'js/Chart.bundle.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery-3.3.1.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/modernizr.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery.menu-aim.js'%}"></script>
+    <script src="{% static 'dashboard/js/plugin.js'%}"></script>
+    <script src="{% static 'dashboard/js/owl.carousel.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery-ui.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery.countTo.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery.magnific-popup.js'%}"></script>
+    <script src="{% static 'dashboard/js/dropify.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery.inview.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'dashboard/js/custom.js'%}"></script>
+    <script src="{% static 'dashboard/js/Chart.bundle.js'%}"></script>
     <!-- custom js-->
 </body>
 

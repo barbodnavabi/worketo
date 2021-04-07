@@ -8,9 +8,9 @@ class ProfileForm(forms.ModelForm):
 
         super(ProfileForm, self).__init__(*args, **kwargs)
         self.fields['username'].help_text = None
-        self.fields['special_user'] = SplitJalaliDateTimeField(label='کاربر ویژه تا',
-                                                               widget=AdminSplitJalaliDateTime
-                                                               )
+        # self.fields['special_user'] = SplitJalaliDateTimeField(label='کاربر ویژه تا',
+        #                                                        widget=AdminSplitJalaliDateTime
+        #                                                        )
 
         if not user.is_superuser:
             self.fields['username'].disabled = True
