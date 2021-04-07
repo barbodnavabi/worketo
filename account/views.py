@@ -43,7 +43,7 @@ class EmployeeRegister(CreateView):
     model = User
     form_class = SignupForm
     template_name = "registration/signup_employee.html"
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('login')
 
     def form_valid(self, form):
         self.obj = form.save(commit=False)
@@ -56,7 +56,7 @@ class EmployerRegister(CreateView):
     model = User
     form_class = SignupForm
     template_name = "registration/signup.html"
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('login')
 
     def form_valid(self, form):
         self.obj = form.save(commit=False)
