@@ -36,7 +36,7 @@ class Profile(LoginRequiredMixin, UpdateView):
         return kwags
 
 
-class passwordChange(PasswordChangeView):
+class PasswordChange(PasswordChangeView):
     success_url = reverse_lazy('password_change_done')
 
 
