@@ -38,6 +38,7 @@ class Profile(LoginRequiredMixin, UpdateView):
 
 class PasswordChange(PasswordChangeView):
     success_url = reverse_lazy('password_change_done')
+    template_name='registration/password_change.html'
 
 
 class EmployeeRegister(CreateView):
