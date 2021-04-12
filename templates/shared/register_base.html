@@ -1,17 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- 
-Template Name: JB desks
-Version: 1.0.0
-Author: Webstrot
-
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="zxx">
-<!--[endif]-->
-
 <head>
     <meta charset="utf-8" />
     <title>داشبورد</title>
@@ -520,36 +509,24 @@ Author: Webstrot
                         {% comment %} <img src="{% static 'images/profile.jpg' %}" class="img-responsive" alt="post_img" /> {% endcomment %}
                         <div class="emp_web_profile candidate_web_profile jb_cover">
 
-                            <h4>آرش خادملو</h4>
-                            <p>@username</p>
-                            <div class="skills jb_cover">
-                                <div class="skill-item jb_cover">
-                                    <h6>پروفایل<span>70%</span></h6>
-                                    <div class="skills-progress"><span data-value="70%"></span>
-                                    </div>
-                                </div>
-                            </div>
+                            <h4>{{user.get_full_name}}</h4>
+                            <p>{{user.username}}@</p>
+
                         </div>
                         <div class="emp_follow_link jb_cover">
                             <ul class="feedlist">
-                                <li><a href="candidate_dashboard.html"><i class="fas fa-tachometer-alt"></i> داشبورد </a></li>
+                                <li><a href="{% url 'profile' %}"><i class="fas fa-tachometer-alt"></i> پروفایل </a></li>
                                 <li>
                                     <a href="candidate_edit_profile.html" class="link_active"> <i class="fas fa-edit"></i>ویرایش پروفایل
                                     </a>
                                 </li>
                                 <li><a href="candidate_resume.html"><i class="fas fa-file"></i>رزومه </a></li>
-                                <li><a href="candidate_favourite_job.html"><i class="fas fa-heart"></i>موردعلاقه</a></li>
                                 <li><a href="candidate_applied_job.html"><i class="fas fa-check-square"></i>شغل درخواستی</a></li>
-                                <li><a href="message.html"><i class="fas fa-envelope"></i>پیام</a></li>
 
                                 <li><a href="pricing_plans.html"><i class="fas fa-tag"></i>طرح های قیمت گذاری</a></li>
                             </ul>
                             <ul class="feedlist logout_link jb_cover">
-                                <li><a href="#"><i class="fas fa-power-off"></i> خروج  </a></li>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash-alt"></i>حذف پروفایل
-                                </a>
-                                </li>
+                                <li><a href="{% url 'logout' %}"><i class="fas fa-power-off"></i> خروج  </a></li>
 
                             </ul>
                         </div>
