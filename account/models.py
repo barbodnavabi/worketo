@@ -3,9 +3,15 @@ from django.db import models
 from django.utils import timezone
 
 class User(AbstractUser):
-    email = models.EmailField(max_length=200,unique=True,verbose_name='ایمیل')
-                             
+    email = models.EmailField(max_length=200,unique=True,verbose_name='ایمیل') 
     phone = models.CharField(max_length=12, blank=True,null=True, verbose_name='تلفن')
+    github=models.URLField(verbose_name='لینک گیتهاب',null=True,blank=True)
+    linkendin=models.URLField(verbose_name='لینکندین',null=True,blank=True)
+    website=models.URLField(verbose_name='وبسایت شما',null=True,blank=True)
+    facebook=models.URLField(verbose_name='لینک فیسبوک',null=True,blank=True)
+    instagram=models.URLField(verbose_name='لینک اینستاگرام',null=True,blank=True)
+    telegram=models.URLField(verbose_name='تلگرام',null=True,blank=True)
+    whatsApp=models.CharField(verbose_name='واتساپ',null=True,blank=True,max_length=50)
     Employee = models.BooleanField(default=False, verbose_name='آیا کارجو هستید؟')
     employer = models.BooleanField(default=False, verbose_name='آیا کارفرما هستید؟')
     avatar=models.ImageField(upload_to='avatars',verbose_name='تصویر شما',null=True,blank=True)

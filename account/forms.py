@@ -12,13 +12,14 @@ class ProfileForm(forms.ModelForm):
         #                                                        widget=AdminSplitJalaliDateTime
         #                                                        )
 
-        if not user.is_superuser:
-            self.fields['username'].disabled = True
-            self.fields['special_user'].disabled = True
+        self.fields['username'].disabled = True
+        self.fields['email'].disabled = True
+        self.fields['special_user'].disabled = True
 
     class Meta:
         model = User
-        fields = ['username','email', 'first_name', 'last_name', 'special_user', "phone", "avatar"]
+        fields = ['username','email', 'first_name', 'last_name', 'special_user'
+        , "phone", "avatar","github","linkendin","facebook","instagram","telegram","whatsApp","website"]
 
 class SignupForm(UserCreationForm):
     username = forms.CharField(help_text='این نام کاربری در هنگام ورود به حساب خود لازم است', label='نام کاربری ')
