@@ -18,7 +18,7 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'special_user', "phone", "avatar"]
+        fields = ['username','email', 'first_name', 'last_name', 'special_user', "phone", "avatar"]
 
 class SignupForm(UserCreationForm):
     username = forms.CharField(help_text='این نام کاربری در هنگام ورود به حساب خود لازم است', label='نام کاربری ')
