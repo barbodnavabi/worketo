@@ -9,13 +9,13 @@ from jobs.models import Jobs
 
 class Dashboard(LoginRequiredMixin, ListView):
     template_name = 'registration/dashboard.html'
-    queryset=Jobs.objects.all()
+    paginate_by= 8
 
-    # def get_queryset(self):
-    #     if self.request.user.is_superuser:
-    #         return Jobs.objects.all()
-    #     else:
-    #         return Jobs.objects.filter(author=self.request.user)
+    def get_queryset(self):
+        if self.request.user.is_superuser:
+            return Jobs.objects.all()
+        else:
+            return Jobs.objects.filter(author=self.request.user)
 
 
 class Profile(LoginRequiredMixin, UpdateView):
