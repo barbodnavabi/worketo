@@ -5,18 +5,17 @@ from django.views.generic import ListView, UpdateView, CreateView
 from .forms import  SignupForm,ProfileForm
 from .models import User
 from django.contrib.auth.views import PasswordChangeView
+from jobs.models import Jobs
 
+class Dashboard(LoginRequiredMixin, ListView):
+    template_name = 'registration/dashboard.html'
+    queryset=Jobs.objects.all()
 
-# class Dashboard(LoginRequiredMixin, ListView):
-#     template_name = 'AdminLTE/home.html'
-#     context_object_name = 'listing'
-#     paginate_by = 16
-
-#     def get_queryset(self):
-#         if self.request.user.is_superuser:
-#             return Listing.objects.all()
-#         else:
-#             return Listing.objects.filter(author=self.request.user)
+    # def get_queryset(self):
+    #     if self.request.user.is_superuser:
+    #         return Jobs.objects.all()
+    #     else:
+    #         return Jobs.objects.filter(author=self.request.user)
 
 
 class Profile(LoginRequiredMixin, UpdateView):
