@@ -1,8 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DetailView
-from jobs.mixins import FormValidMixin
+from django.views.generic import CreateView, ListView, DetailView,UpdateView
+from jobs.mixins import FormValidMixin,AuthorAccessMixin
 from jobs.models import Jobs, Cities
 from .forms import MassegeForm
 from django.views.generic.edit import FormMixin
@@ -34,6 +34,25 @@ class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
         "price",
         "category",
         "city",
+        "Type",
+        "soldiering",
+        "sex",
+        'service',
+        'employer_description', ]
+
+class JobUpdate(LoginRequiredMixin,AuthorAccessMixin, FormValidMixin, UpdateView):
+    model = Jobs
+    template_name = 'jobs/update_job.html'
+    success_url = reverse_lazy('dashboard')
+    fields = [
+        "title",
+        "company",
+        "description",
+        "address",
+        "important",
+        "price",
+        "category",
+        "state",
         "Type",
         "soldiering",
         "sex",
