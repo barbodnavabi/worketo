@@ -7,4 +7,6 @@ urlpatterns = [
     path('', include('config.urls')),
     path('', include('jobs.urls')),
     path('', include('account.urls')),
+    path('tinymce/', include('tinymce.urls')),
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

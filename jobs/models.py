@@ -2,7 +2,7 @@ from django.db import models
 from taggit.managers import TaggableManager
 from taggit.models import TaggedItemBase
 from account.models import User
-
+from tinymce.models import HTMLField
 
 class CategoryManager(models.Manager):
     def active(self):
@@ -108,7 +108,7 @@ class Jobs(models.Model):
     author = models.ForeignKey(User, models.CASCADE, verbose_name='نویسنده')
     title = models.CharField(max_length=300, verbose_name='عنوان شغلی')
     company = models.CharField(max_length=300, verbose_name='نام شرکت')
-    description = models.TextField(verbose_name='توضیحات شغلی')
+    description = HTMLField(verbose_name='توضیحات شغلی')
     employer_description = models.TextField(verbose_name='نفش کارمند در شرکت')
     address = models.TextField(verbose_name='آدرس شرکت شما')
     important = TaggableManager(blank=True, verbose_name='مهارت های لازم')

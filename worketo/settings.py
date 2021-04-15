@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'resume',
     'taggit',
     'crispy_forms',
+    'tinymce',
 ]
 
 # defaults

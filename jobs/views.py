@@ -7,7 +7,7 @@ from jobs.models import Jobs, Cities
 from .forms import MassegeForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse
-
+from .forms import JobForm
 
 class JobListView(ListView):
     model = Jobs
@@ -44,20 +44,21 @@ class JobUpdate(LoginRequiredMixin,AuthorAccessMixin, FormValidMixin, UpdateView
     model = Jobs
     template_name = 'jobs/update_job.html'
     success_url = reverse_lazy('dashboard')
-    fields = [
-        "title",
-        "company",
-        "description",
-        "address",
-        "important",
-        "price",
-        "category",
-        "state",
-        "Type",
-        "soldiering",
-        "sex",
-        'service',
-        'employer_description', ]
+    form_class = JobForm
+    # fields = [
+    #     "title",
+    #     "company",
+    #     "description",
+    #     "address",
+    #     "important",
+    #     "price",
+    #     "category",
+    #     "state",
+    #     "Type",
+    #     "soldiering",
+    #     "sex",
+    #     'service',
+    #     'employer_description', ]
 
 
 class JobsDetailView(FormMixin, DetailView):
