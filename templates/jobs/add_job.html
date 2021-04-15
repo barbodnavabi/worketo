@@ -1,17 +1,128 @@
-{% extends 'shared/base.html' %}
+{% extends 'shared/register_base.html' %}
 {% load static %}
 {% load crispy_forms_filters %}
 
 {% block content %}
 
-                        <form method="post">
+                <div class="col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="job_filter_category_sidebar pd0 jb_cover">
+                                <div class="job_filter_sidebar_heading jb_cover">
+                                    <h1> ارسال شغل جدید</h1>
+                                </div>
+                                <div class="job_overview_header jb_cover">
+        <form method="post">
                             {% csrf_token %}
-{{form}}
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                         <div class="contect_form3">
+                                           {{form.company|as_crispy_field}}
+ </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="contect_form3">
+                                         {{form.title|as_crispy_field}}
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                             {{form.category|as_crispy_field}}
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                                {{form.Type|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                                {{form.price|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.soldiering|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.state|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.sex|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.experiance|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="job_filter_category_sidebar jb_cover">
+                                <div class="job_filter_sidebar_heading jb_cover">
+                                    <h1> درباره این شغل</h1>
+                                </div>
+                                <div class="job_overview_header jb_cover">
+
+{{form.description|as_crispy_field}}
+{{form.employer_description|as_crispy_field}}
+{{form.address|as_crispy_field}}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="job_filter_category_sidebar jb_cover tag_padding">
+                                <div class="job_filter_sidebar_heading jb_cover">
+                                    <h1>مهارت های مورد نیاز</h1>
+                                </div>
+                                <div class="job_overview_header jb_cover">
+                                    <div class="contect_form3">
+                    {{form.important|as_crispy_field}}
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="job_filter_category_sidebar jb_cover tag_padding">
+                                <div class="job_filter_sidebar_heading jb_cover">
+                                    <h1>خصوصیات فردی و اخلاقی</h1>
+                                </div>
+                                <div class="job_overview_header jb_cover">
+                                    <div class="contect_form3">
+                                        {{form.service|as_crispy_field}}
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                                <button class='btn btn-danger btn-block'> ثبت </button>
+                                <br>
+                                <hr>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
+    <script src="{% static 'tags/js/tagsinput.js' %}"></script>
     <script>
         $("#post-form").submit(function (e) {
             e.preventDefault();
         });</script>
-    <script src="{% static 'tags/js/tagsinput.js' %}"></script>
-
+       
 {% endblock %}
+
+
+                
