@@ -2,7 +2,9 @@
  * bootstrap-tagsinput v0.8.0
  * 
  */
-
+.tag_padding{
+  padding-bottom: 13rem;
+}
  .bootstrap-tagsinput {
     border: solid 1px #e9ecee;
   border-radius: 0;

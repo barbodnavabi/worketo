@@ -16,7 +16,16 @@ class MassegeForm(forms.ModelForm):
 class JobForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(JobForm, self).__init__(*args, **kwargs)
-        self.fields['description']= forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+        self.fields['description']= forms.CharField(widget=TinyMCE(attrs={'cols': 10, 'rows': 5}))
+        self.fields['employer_description']= forms.CharField(widget=TinyMCE(attrs={'cols': 10, 'rows': 5}))
+        # self.fields['important']= forms.CharField(attrs={'class': "form-control", 'data-role': 'tagsinput'})
+        self.fields["important"].widget.attrs['class'] = 'form-control'
+        self.fields["important"].widget.attrs['data-role'] = 'tagsinput'
+        self.fields["important"].help_text=None
+        self.fields["service"].widget.attrs['class'] = 'form-control'
+        self.fields["service"].widget.attrs['data-role'] = 'tagsinput'
+        self.fields["service"].help_text=None
+        # self.fields['important']= 
 
     class Meta:
         model = Jobs
@@ -33,4 +42,5 @@ class JobForm(forms.ModelForm):
         "soldiering",
         "sex",
         'service',
-        'employer_description', ]
+        'employer_description',
+        'experiance' ]

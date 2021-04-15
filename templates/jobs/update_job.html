@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
                 <div class="col-lg-9 col-md-12 col-sm-12 col-12">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
@@ -13,6 +12,8 @@
                                     <h1> ارسال شغل جدید</h1>
                                 </div>
                                 <div class="job_overview_header jb_cover">
+        <form method="post">
+                            {% csrf_token %}
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                                          <div class="contect_form3">
@@ -32,33 +33,33 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="contect_form3">
-                                                <label>ساعات کاری</label>
-                                                <input type="text" name="name" placeholder="40/س در هفته">
+                                            <div class="select_box">
+                                                {{form.Type|as_crispy_field}}
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                             <div class="select_box">
-                                                <label>حقوق</label>
-                                                <select>
-                                                    <option>12هزار - 15هزار تومان</option>
-                                                    <option>12هزار - 20هزار تومان</option>
-                                                    <option> 12هزار - 35هزار تومان</option>
-                                                    <option>12هزار - 45هزار تومان</option>
-
-                                                </select>
+                                                {{form.price|as_crispy_field}}
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                                             <div class="select_box">
-                                                <label>تجربه</label>
-                                                <select>
-                                                    <option>1 سال تجربه</option>
-                                                    <option>2 سال تجربه</option>
-                                                    <option> 3 سال تجربه</option>
-                                                    <option>4 سال تجربه</option>
-
-                                                </select>
+                                             {{form.soldiering|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.state|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.sex|as_crispy_field}}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="select_box">
+                                             {{form.experiance|as_crispy_field}}
                                             </div>
                                         </div>
                                     </div>
@@ -72,169 +73,58 @@
                                 </div>
                                 <div class="job_overview_header jb_cover">
 
-                                    <div class="wrapper jb_cover">
-                                        <div class="options">
-                                            <button onClick="transform('bold', null)">
-                                                <i class="fas fa-bold"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('italic', null)">
-                                                <i class="fas fa-italic"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('strikeThrough', null)">
-                                                <i class="fas fa-strikethrough"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('underline', null)">
-                                                <i class="fas fa-underline"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('justifyLeft', null)">
-                                                <i class="fas fa-align-left"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('justifyCenter', null)">
-                                                <i class="fas fa-align-center"></i>
-                                            </button>
-                                            <button onClick="transform('justifyRight', null)">
-                                                <i class="fas fa-align-right"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('insertOrderedList', null)">
-                                                <i class="fas fa-list-ol"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-                                            <button onClick="transform('insertUnorderedList', null)">
-                                                <i class="fas fa-list-ul"></i>
-                                            </button>
-                                            <div class="seperator"></div>
-
-                                            <div class="seperator"></div>
-                                            <input type="number" onChange="transform('fontSize', this.value)" value="3" max="7" min="1">
-
-                                        </div>
-                                    
-                                        <select onChange="transform('fontName', this.value)">
-                                            <option disabled>فونت</option>
-                                            <option value="Times New Roman">Times</option>
-                                            <option value="Arial">Arial</option>
-                                            <option value="Courier New">Courier New</option>
-                                            <option value="Tahoma">Tahoma</option>
-                                            <option value="Arial">Verdana</option>
-                                        </select>
-                                        <iframe name="editor" id="editor"></iframe>
-                                    </div>
+{{form.description|as_crispy_field}}
+{{form.employer_description|as_crispy_field}}
+{{form.address|as_crispy_field}}
 
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="job_filter_category_sidebar jb_cover">
+                            <div class="job_filter_category_sidebar jb_cover tag_padding">
                                 <div class="job_filter_sidebar_heading jb_cover">
-                                    <h1>کلمات کلیدی تکراری</h1>
+                                    <h1>مهارت های مورد نیاز</h1>
                                 </div>
                                 <div class="job_overview_header jb_cover">
                                     <div class="contect_form3">
-
-                                        <input type="text" name="name" placeholder="کلمات کلیدی را تایپ کنید">
+                    {{form.important|as_crispy_field}}
                                     </div>
-                                    <div class="jb_btm_keyword jb_cover">
-                                        <ul>
-                                            <li><i class="flaticon-tag"></i> کلمات کلیدی مورد علاقه :</li>
-                                            <li><a href="#">طراح رابط کاربری،</a></li>
-                                            <li><a href="#">توسعه دهنده،</a></li>
-                                            <li><a href="#">ارشد</a></li>
-                                            <li><a href="#">شرکت آی تی،</a></li>
-                                            <li><a href="#">طراحی،</a></li>
-                                            <li><a href="#">مرکز تماس</a></li>
-                                        </ul>
-                                    </div>
+    
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="job_filter_category_sidebar jb_cover">
+                            <div class="job_filter_category_sidebar jb_cover tag_padding">
                                 <div class="job_filter_sidebar_heading jb_cover">
-                                    <h1>آدرس / محل </h1>
+                                    <h1>خصوصیات فردی و اخلاقی</h1>
                                 </div>
                                 <div class="job_overview_header jb_cover">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="select_box">
-                                                <label>کشور</label>
-                                                <select>
-                                                    <option>امریکا</option>
-                                                    <option>فرانسه</option>
-                                                    <option>انگلیس</option>
-                                                    <option>آلمان</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="select_box">
-                                                <label>شهر</label>
-                                                <select>
-                                                    <option>نیویورک</option>
-                                                    <option>کالفرنیا</option>
-                                                    <option> لس آنجلس</option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                            <div class="contect_form3">
-                                                <label>آدرس کامل</label>
-                                                <input type="text" name="name" placeholder="تهران ایران">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                            <div class="contect_form3">
-                                                <label>عرض جغرافیایی</label>
-                                                <input type="text" name="name" placeholder="41.4073509">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                            <div class="contect_form3">
-                                                <label>طول جغرافیایی</label>
-                                                <input type="text" name="name" placeholder="50.4073509">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                                            <div class="contect_form3">
-                                                <label>زوم</label>
-                                                <input type="text" name="name" placeholder="20">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                            <div class="map_wrapper jb_cover">
-                                                <div id='map'>
-                                                </div>
-                                            </div>
-                                        </div>
-
+                                    <div class="contect_form3">
+                                        {{form.service|as_crispy_field}}
                                     </div>
+    
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                                <button class='btn btn-danger btn-block'> ثبت </button>
+                                <br>
+                                <hr>
                 </div>
             </div>
         </div>
     </div>
-{% endblock %}
-
-
-                        <form method="post">
-                            {% csrf_token %}
-{{form|crispy}}
-{{form.description}}
 </form>
+    <script src="{% static 'tags/js/tagsinput.js' %}"></script>
     <script>
         $("#post-form").submit(function (e) {
             e.preventDefault();
         });</script>
-    <script src="{% static 'tags/js/tagsinput.js' %}"></script>
+       
+{% endblock %}
+
+
+                
+{{form|crispy}}
+{{form.description}}

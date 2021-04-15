@@ -45,20 +45,6 @@ class JobUpdate(LoginRequiredMixin,AuthorAccessMixin, FormValidMixin, UpdateView
     template_name = 'jobs/update_job.html'
     success_url = reverse_lazy('dashboard')
     form_class = JobForm
-    # fields = [
-    #     "title",
-    #     "company",
-    #     "description",
-    #     "address",
-    #     "important",
-    #     "price",
-    #     "category",
-    #     "state",
-    #     "Type",
-    #     "soldiering",
-    #     "sex",
-    #     'service',
-    #     'employer_description', ]
 
 
 class JobsDetailView(FormMixin, DetailView):
