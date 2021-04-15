@@ -24,21 +24,8 @@ class JobListView(ListView):
 class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
     model = Jobs
     template_name = 'jobs/add_job.html'
-    success_url = reverse_lazy('index')
-    fields = [
-        "title",
-        "company",
-        "description",
-        "address",
-        "important",
-        "price",
-        "category",
-        "city",
-        "Type",
-        "soldiering",
-        "sex",
-        'service',
-        'employer_description', ]
+    success_url = reverse_lazy('dashboard')
+    form_class = JobForm
 
 class JobUpdate(LoginRequiredMixin,AuthorAccessMixin, FormValidMixin, UpdateView):
     model = Jobs
