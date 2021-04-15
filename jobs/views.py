@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, DetailView,UpdateView
+from django.views.generic import CreateView, ListView, DetailView,UpdateView,DeleteView
 from jobs.mixins import FormValidMixin,AuthorAccessMixin
 from jobs.models import Jobs, Cities
 from .forms import MassegeForm
@@ -60,6 +60,10 @@ class JobsDetailView(FormMixin, DetailView):
         form.save()
         return super().form_valid(form)
 
+class JobDelete(DeleteView,AuthorAccessMixin,LoginRequiredMixin):
+    model = Jobs
+    template_name = 'jobs/job_delete.html'
+    success_url=reverse_lazy("dashboard")
 
 class SearchjobsView(ListView):
     template_name = 'jobs/job_list.html'
