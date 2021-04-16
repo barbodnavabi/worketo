@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView,UpdateView,DeleteView
 from jobs.mixins import FormValidMixin,AuthorAccessMixin
@@ -39,8 +39,11 @@ class JobsDetailView(FormMixin, DetailView):
     template_name = 'jobs/jobDetail.html'
     form_class = MassegeForm
 
-    def get_queryset(self):
-        return Jobs.objects.filter(status='p')
+    def get_object(self):
+        return get_object_or_404(
+            Jobs.objects.filter(status='p'),
+            pk=self.kwargs.get("pk")
+        )
 
     def get_success_url(self):
         return reverse('job-detail', kwargs={'pk': self.object.pk})
