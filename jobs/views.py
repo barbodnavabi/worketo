@@ -2,12 +2,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DetailView,UpdateView,DeleteView
-from jobs.mixins import FormValidMixin,AuthorAccessMixin
+from jobs.mixins import FormValidMixin,AuthorAccessMixin,UserAccessMixin
 from jobs.models import Jobs, Cities
 from .forms import MassegeForm
 from django.views.generic.edit import FormMixin
 from django.urls import reverse
 from .forms import JobForm
+from django.contrib import messages
 
 class JobListView(ListView):
     model = Jobs
@@ -21,11 +22,12 @@ class JobListView(ListView):
         return context
 
 
-class JobCreate(LoginRequiredMixin, FormValidMixin, CreateView):
+class JobCreate(UserAccessMixin,LoginRequiredMixin, FormValidMixin, CreateView):
     model = Jobs
     template_name = 'jobs/add_job.html'
     success_url = reverse_lazy('dashboard')
     form_class = JobForm
+    
 
 class JobUpdate(LoginRequiredMixin,AuthorAccessMixin, FormValidMixin, UpdateView):
     model = Jobs

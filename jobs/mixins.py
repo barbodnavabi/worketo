@@ -23,3 +23,9 @@ class AuthorAccessMixin():
             return super().dispatch(request, *args, **kwargs)
         else:
             raise Http404('یافت نشد')
+class UserAccessMixin():
+    def get(self, request, *args, **kwargs):
+        if request.user.Employee:
+            return redirect('/')
+            messages.error('شما نمیتوانید به صفحه های کارفرمایان دسترسی داشته باشید')
+        return super().get(request, *args, **kwargs)

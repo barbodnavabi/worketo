@@ -6,8 +6,9 @@ from .forms import  SignupForm,ProfileForm
 from .models import User
 from django.contrib.auth.views import PasswordChangeView
 from jobs.models import Jobs
+from jobs.mixins import UserAccessMixin
 
-class Dashboard(LoginRequiredMixin, ListView):
+class Dashboard(UserAccessMixin,LoginRequiredMixin, ListView):
     template_name = 'registration/dashboard.html'
     paginate_by= 8
 
