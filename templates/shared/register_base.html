@@ -205,12 +205,15 @@
             </header>
             <div class="menu_btn_box header_btn jb_cover">
                 <ul>
-                    <li>
-                        <a href="sign_up.html"><i class="flaticon-man-user"></i> ثبت نام</a>
+                                {% if user.is_authenticated %}
+                     <li>
+                        <a href="{% url 'profile' %}"> <i class="flaticon-man-user"></i> پروفایل کاربری</a>
                     </li>
+                {% else %}
                     <li>
-                        <a href="login.html"> <i class="flaticon-login"></i> ورود</a>
+                        <a href="{% url 'login' %}"> <i class="flaticon-login"></i> ورود / ثبت نام</a>
                     </li>
+                {% endif %}
                 </ul>
             </div>
 
