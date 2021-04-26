@@ -1,0 +1,99 @@
+{% extends 'shared/register_base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block content %}
+
+                <div class="col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="job_listing_left_fullwidth jb_cover">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="jp_job_post_side_img">
+                                        {% if user.avatar %}
+                                            <img src="{{user.avatar.url}}" alt="{{user.username}}" width='80' height='80'>
+                                        {% endif %}
+                                        </div>
+                                <form method='post' enctype="multipart/form-data">
+                                {% csrf_token %}
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="browse_img_banner jb_cover">
+
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="contect_form3">
+                                           {{form|crispy}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="job_filter_category_sidebar jb_cover">
+                                        <div class="job_filter_sidebar_heading jb_cover">
+                                            <h1> شبکه های اجتماعی</h1>
+                                        </div>
+                                        <div class="job_overview_header jb_cover">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.website|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.github|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.instagram|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.facebook|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.linkendin|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.telegram|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="contect_form3">
+                                                    {{form.whatsApp|as_crispy_field}}
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<button class='btn btn-danger btn-block'>ویرایش</button>
+                            </form>
+<br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
