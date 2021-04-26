@@ -23,12 +23,13 @@ class UserInfo(models.Model):
         return self.user.username
 class Study(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    description=models.TextField(verbose_name='توضیحات',blank=True,null=True)
     course = models.CharField(max_length=200,verbose_name='مهارت')
     college = models.CharField(max_length=300,verbose_name='دانشکده')
 
 
     def __str__(self):
-        return self.user.username
+        return self.description
 
 
 class Skill(models.Model):
