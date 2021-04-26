@@ -35,7 +35,7 @@ class Study(models.Model):
 class Skill(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
     skill = models.CharField(max_length=50, null=True, blank=True,verbose_name='مهارت')
-    percent = models.DecimalField(max_digits=4, decimal_places=2,verbose_name='چند درصد در این مهارت حرفه ای هستید؟')
+    percent = models.DecimalField(max_digits=4, decimal_places=0,verbose_name='چند درصد در این مهارت حرفه ای هستید؟')
 
     def __str__(self):
         return self.user.username
