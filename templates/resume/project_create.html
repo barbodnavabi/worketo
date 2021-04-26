@@ -19,7 +19,11 @@
       <img src="{{project.image.url}}" class="card-img-top" alt="{{project.name}}" width='200' height='400'>
     {% endif %}
       <div class="card-body">
-        <h5 class="card-title">{{project.name}}</h5>
+      {% if project.link %}
+       <a href='{{project.link}}'> <h5 class="card-title">{{project.name}}</h5></a>
+       {% else %}
+      <h5 class="card-title">{{project.name}}</h5>
+      {% endif %}
         <p class="card-text">{{project.description}}</p>
       </div>
     </div>
