@@ -6,6 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('config.urls')),
     path('', include('jobs.urls')),
+    path('', include('resume.urls')),
     path('', include('account.urls')),
     path('tinymce/', include('tinymce.urls')),
 
