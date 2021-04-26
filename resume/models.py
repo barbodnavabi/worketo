@@ -45,8 +45,10 @@ class Skill(models.Model):
 class Project(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=50, null=True, blank=True,verbose_name='نام پروژه')
+    description = models.TextField(("نقش شما در پروژه"))
     type = models.CharField(max_length=50, null=True, blank=True,verbose_name='زمینه کاری پروژه')
     link = models.CharField(max_length=2084, null=True, blank=True,verbose_name='لینک پروژه')
+    date_created = models.DateField(("date_created"),auto_now_add=True)
     image = models.ImageField(upload_to="projects",blank=True,null=True,verbose_name='عکس')
 
     def __str__(self):

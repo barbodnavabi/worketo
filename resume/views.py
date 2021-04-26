@@ -36,9 +36,15 @@ class SkillCreateView(FormUserMixin,CreateView):
 
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(FormUserMixin,CreateView):
     model = Project
-    template_name = "project_create.html"
+    template_name = "resume/project_create.html"
+    success_url=reverse_lazy("project-create")
+    fields=["name","type",'image','link','description']
+    def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context["projects"] = Project.objects.filter(user=self.request.user)
+            return context
 
 
 class ExperienceCreateView(CreateView):
