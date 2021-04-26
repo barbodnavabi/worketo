@@ -17,7 +17,7 @@ class UserInfo(models.Model):
     facebook = models.URLField(verbose_name='لینک فیسبوک',null=True,blank=True)
     instagram = models.URLField(verbose_name='لینک اینستاگرام',null=True,blank=True)
     telegram = models.URLField(verbose_name='تلگرام',null=True,blank=True)
-    whatsApp = models.PositiveIntegerField(verbose_name='واتساپ',null=True,blank=True,max_length=50)
+    whatsApp = models.PositiveIntegerField(verbose_name='واتساپ',null=True,blank=True)
 
     def __str__(self):
         return self.user.username
