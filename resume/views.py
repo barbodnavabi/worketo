@@ -1,13 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .models import UserInfo,Study,Skill,Project,Experience
+from .models import Study,Skill,Project,Experience
 from .mixins import FormUserMixin
-class UserInfoCreateView(FormUserMixin,CreateView):
-    model = UserInfo
-    fields=["full_name","email","phone","image","address","bio","github","linkendin","website","facebook","instagram",
-    "telegram","whatsApp",]
-    template_name = "resume/user_info_create.html"
 
 
 class StudyCreateView(FormUserMixin,CreateView):

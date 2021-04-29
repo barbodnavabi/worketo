@@ -4,7 +4,9 @@ from django.utils import timezone
 
 class User(AbstractUser):
     email = models.EmailField(max_length=200,unique=True,verbose_name='ایمیل') 
-    phone = models.CharField(max_length=12, blank=True,null=True, verbose_name='تلفن')
+    phone = models.PositiveIntegerField(verbose_name='تلفن')
+    address = models.TextField(verbose_name='آدرس')
+    bio = models.TextField(verbose_name='توضیحات و بیوگرافی شما')
     github=models.URLField(verbose_name='لینک گیتهاب',null=True,blank=True)
     linkendin=models.URLField(verbose_name='لینکندین',null=True,blank=True)
     website=models.URLField(verbose_name='وبسایت شما',null=True,blank=True)
@@ -17,6 +19,7 @@ class User(AbstractUser):
     avatar=models.ImageField(upload_to='avatars',verbose_name='تصویر شما',null=True,blank=True)
     special_user = models.DateTimeField(default=timezone.now, verbose_name="کاربر ویژه تا")
     is_membership = models.DateTimeField(default=timezone.now,verbose_name='آکهی های ویژه')
+
 
 
     def is_special_user(self):

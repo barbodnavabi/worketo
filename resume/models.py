@@ -2,25 +2,6 @@ from django.db import models
 from django.conf import settings
 # Create your models here.
 
-
-class UserInfo(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
-    full_name = models.CharField(max_length=200,verbose_name='نام و نام خانوادگی')
-    email = models.EmailField(("ایمیل"), max_length=254,blank=True,null=True)
-    phone = models.PositiveIntegerField(verbose_name='تلفن')
-    image = models.ImageField(upload_to='images',verbose_name='تصویر شما',null=True,blank=True)
-    address = models.TextField(verbose_name='آدرس')
-    bio = models.TextField(verbose_name='توضیحات و بیوگرافی شما')
-    github = models.URLField(verbose_name='لینک گیتهاب',null=True,blank=True)
-    linkendin = models.URLField(verbose_name='لینکندین',null=True,blank=True)
-    website = models.URLField(verbose_name='وبسایت شما',null=True,blank=True)
-    facebook = models.URLField(verbose_name='لینک فیسبوک',null=True,blank=True)
-    instagram = models.URLField(verbose_name='لینک اینستاگرام',null=True,blank=True)
-    telegram = models.URLField(verbose_name='تلگرام',null=True,blank=True)
-    whatsApp = models.PositiveIntegerField(verbose_name='واتساپ',null=True,blank=True)
-
-    def __str__(self):
-        return self.user.username
 class Study(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
     description=models.TextField(verbose_name='توضیحات',blank=True,null=True)
