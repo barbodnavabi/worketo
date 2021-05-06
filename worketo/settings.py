@@ -26,8 +26,6 @@ INSTALLED_APPS = [
     'config',
     'account',
     'jobs',
-    'blog',
-    'freelancer',
     'resume',
     'taggit',
     'crispy_forms',
